@@ -1,0 +1,20 @@
+.basket {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 20%;
+  padding: 10px 30px 20px;
+  border: 1px solid gray;
+
+  .basket-item {
+    display: flex;
+    justify-content: space-between;
+
+    .name {
+      flex-basis: 70%;
+    }
+  }
+
+  .basket-total {
+    margin-top: auto;
+  }
+}

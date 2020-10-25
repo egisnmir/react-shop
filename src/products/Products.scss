@@ -1,0 +1,14 @@
+.products {
+  flex-basis: 80%;
+  padding: 0 30px;
+  border: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+
+  .products-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+}
