@@ -36,8 +36,8 @@ const ProductsList = [
   },
   {
     id: 8,
-    name: 'Brocolli',
-    price: 0.49
+    name: 'Peaches',
+    price: 0.19
   }
 ];
 
