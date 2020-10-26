@@ -1,7 +1,7 @@
 import './App.scss';
 import Basket from './basket/Basket';
 import Products from './products/Products';
-import ProductsList from './products/productsListJson';
+import ProductsList from './products/ProductsListJson';
 import { useState } from 'react';
 
 function App() {

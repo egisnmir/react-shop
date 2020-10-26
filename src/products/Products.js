@@ -1,7 +1,7 @@
 import './Products.scss';
 import ProductItem from './ProductItem';
 import { useState } from 'react';
-import ProductsList from './productsListJson';
+import ProductsList from './ProductsListJson';
 
 function Products(props) {
   const [products] = useState(ProductsList);
