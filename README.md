@@ -9,6 +9,5 @@ So basically to add something to a cart you first need to add the number to the 
 
 
 #### Some things to improve could be:
-1. Adding TypeScript.
-2. Using Memoization to avoid unnecessary rendering.
-3. Replacing the "+" & "-" buttons with an "Add" button and making a remove button in the carts list.
+1. TypeScript
+2. Redux
