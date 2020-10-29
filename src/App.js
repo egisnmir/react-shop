@@ -21,7 +21,6 @@ function App() {
 
   const [cartContent, setCartContent] = useState(initialCartContent);
 
-  //Remove direct state mutation
   const updateCartContents = (data) => {
     const newContent = [...cartContent];
     const dupeIndex = newContent.findIndex(item => item.id === data.id);
