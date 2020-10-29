@@ -8,7 +8,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  padding: 10px 15px 25px;
+  padding: 15px;
   box-sizing: border-box;
   justify-content: space-around;
 
@@ -20,35 +20,20 @@
     
   .add-remove-wrapper {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     
-    .remove, .add {
+    .set-ammount {
       cursor: pointer;
-      background: black;
-      border-radius: 15px;
+      background: #376ccc;
       color: white;
-      height: 28px;
-      width: 29px;
+      height: 24px;
+      width: 37px;
     }
   }
   
   .ammount {
     -moz-appearance: textfield;
     flex-basis: 40%;
-    margin: 0 10px;
     width: 0;
-  }
-
-  .info-icon {
-    position: absolute;
-    bottom: 5px;
-    left: 5px;
-    font-size: 11px;
-    z-index: 23213123;
-    background: gray;
-    width: 15px;
-    height: 15px;
-    border-radius: 10px;
-    color: white;
   }
 }

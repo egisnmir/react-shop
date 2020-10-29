@@ -13,18 +13,13 @@ function ProductItem(props) {
       <div>{props.name}</div>
       <div className="product-image"></div>
       <div>£{props.price} each</div>
-      <div className="add-remove-wrapper">
-        <div className="remove" onClick={() => {
-          props.updateProductAmmount({id: props.id, ammount: -ammount})
-        }}>-</div>
-
+      <div className="add-remove-wrapper">  
         <input type="number" className="ammount" value={ammount} onChange={handleChange}></input>
 
-        <div className="add" onClick={() => {
-          props.updateProductAmmount({id: props.id, ammount: +ammount})
-        }}>+</div>
+        <div className="set-ammount" onClick={() => {
+          props.setProductAmmount({id: props.id, name: props.name, price: props.price, ammount: +ammount})
+        }}>Set</div>
       </div>
-      <div className="info-icon">i</div>
     </div>
   );
 }

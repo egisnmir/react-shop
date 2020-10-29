@@ -1,23 +1,20 @@
 import './Products.scss';
 import ProductItem from './ProductItem';
-import { useState } from 'react';
 import ProductsList from './ProductsListJson';
 
 function Products(props) {
-  const [products] = useState(ProductsList);
-
-  const updateProductAmmount = (data) => {
-    props.changeBasketContents(data);
+  const callback = (data) => {
+    props.updateCartContents(data);
   }
 
-  const productsDOM = products.map((product) => {
+  const productsDOM = ProductsList.map((product) => {
     return (
       <ProductItem
         key={product.id}
         id={product.id}
         name={product.name}
         price={product.price}
-        updateProductAmmount={updateProductAmmount}>
+        setProductAmmount={callback}>
       </ProductItem>
     )
   });

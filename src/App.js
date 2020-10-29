@@ -1,65 +1,51 @@
 import './App.scss';
-import Basket from './basket/Basket';
+import Cart from './cart/Cart';
 import Products from './products/Products';
-import ProductsList from './products/ProductsListJson';
 import { useState } from 'react';
 
 function App() {
-  const initialBasketContent = [
+  const initialCartContent = [
     {
       id: 2,
       name: 'Pink Lady Apple',
       price: 0.39,
-      ammount: 3
+      ammount: 2
     },
     {
       id: 6,
       name: 'Pineapple',
       price: 1.29,
-      ammount: 1
-    },
-    {
-      id: 4,
-      name: 'Brocolli',
-      price: 0.49,
-      ammount: 6
+      ammount: 4
     }
   ];
 
-  const [basketContent, updatebasketContent] = useState(initialBasketContent);
+  const [cartContent, setCartContent] = useState(initialCartContent);
 
-  const changeBasketContents = (data) => {
-    let unique = true;
+  //Remove direct state mutation
+  const updateCartContents = (data) => {
+    const newContent = [...cartContent];
+    const dupeIndex = newContent.findIndex(item => item.id === data.id);
 
-    basketContent.forEach((item, index) => {
-      if(item.id === data.id) {
-        unique = false;
-        item.ammount += data.ammount;
-
-        if(item.ammount <= 0) {
-          basketContent.splice(index, 1);
-        }
-      }
-    });
-
-    if(unique && data.ammount > 0) {
-      let item = ProductsList.find((item) => {
-        return item.id === data.id;
-      });
-
-      data.name = item.name;
-      data.price = item.price;
-
-      updatebasketContent([...basketContent, data]);
+    //Handle duplicate
+    if(dupeIndex > -1) {
+      if(data.ammount <= 0) {
+        newContent.splice(dupeIndex, 1);
+      } else {
+        newContent[dupeIndex].ammount = data.ammount;
+      };
     } else {
-      updatebasketContent([...basketContent]);
+      if(data.ammount > 0) {
+        newContent.push(data);
+      }
     }
-  }
+
+    setCartContent([...newContent]);
+  };
 
   return (
     <div className="app">
-      <Products changeBasketContents={changeBasketContents}></Products>
-      <Basket basketContent={basketContent}></Basket>
+      <Products updateCartContents={updateCartContents}></Products>
+      <Cart cartContent={cartContent}></Cart>
     </div>
   );
 }
