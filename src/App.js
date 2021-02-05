@@ -9,13 +9,13 @@ function App() {
       id: 2,
       name: 'Pink Lady Apple',
       price: 0.39,
-      ammount: 2
+      amount: 2
     },
     {
       id: 6,
       name: 'Pineapple',
       price: 1.29,
-      ammount: 4
+      amount: 4
     }
   ];
 
@@ -27,13 +27,13 @@ function App() {
 
     //Handle duplicate
     if(dupeIndex > -1) {
-      if(data.ammount <= 0) {
+      if(data.amount <= 0) {
         newContent.splice(dupeIndex, 1);
       } else {
-        newContent[dupeIndex].ammount = data.ammount;
+        newContent[dupeIndex].amount = data.amount;
       }
     } else {
-      if(data.ammount > 0) {
+      if(data.amount > 0) {
         newContent.push(data);
       }
     }

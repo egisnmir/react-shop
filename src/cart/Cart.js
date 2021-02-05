@@ -2,28 +2,29 @@ import './Cart.scss';
 import { useState, useEffect } from 'react';
 
 function Cart(props) {
-  const [totalAmmount, setTotalAmmount] = useState('');
+  const [totalAmount, setTotalAmount] = useState('');
   const [totalPrice, setTotalPrice] = useState('');
 
   useEffect(() => {
-    let newTotalAmmount = 0;
+    let newTotalAmount = 0;
     let newTotalPrice = 0;
 
     props.cartContent.forEach(item => {
-      newTotalAmmount += item.ammount;
-      newTotalPrice += item.price * item.ammount;
+      newTotalAmount += item.amount;
+      newTotalPrice += item.price * item.amount;
     });
 
-    setTotalAmmount(newTotalAmmount);
+    setTotalAmount(newTotalAmount);
     setTotalPrice(newTotalPrice.toFixed(2));
   }, [props.cartContent]);
 
   const cartDOM = props.cartContent.map((product) => {
     return (
       <div className="cart-item" key={product.id + 2}>
-        <div className="ammount">{product.ammount}</div>
+        <div className="remove">{product.remove}</div>
+        <div className="amount">{product.amount}</div>
         <div className="name">{product.name}</div>
-        <div className="total-price">{(product.price * product.ammount).toFixed(2)}</div>
+        <div className="total-price">{(product.price * product.amount).toFixed(2)}</div>
       </div>
     )
   });
@@ -33,9 +34,9 @@ function Cart(props) {
       <h4>Shopping Cart</h4>
       {cartDOM}
 
-      {totalAmmount && totalAmmount &&
+      {totalAmount && totalAmount &&
         <div className="cart-item cart-total">
-          <div className="ammount">{totalAmmount}</div>
+          <div className="amount">{totalAmount}</div>
           <div className="name">Total</div>
           <div className="total-price">{totalPrice}</div>
         </div>

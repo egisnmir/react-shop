@@ -14,7 +14,7 @@ function Products(props) {
         id={product.id}
         name={product.name}
         price={product.price}
-        setProductAmmount={callback}>
+        setProductAmount={callback}>
       </ProductItem>
     )
   });

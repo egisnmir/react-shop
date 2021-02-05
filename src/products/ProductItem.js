@@ -2,10 +2,10 @@ import './ProductItem.scss';
 import { useState } from 'react';
 
 function ProductItem(props) {
-  const [ammount, setAmmount] = useState(0);
+  const [amount, setAmount] = useState(0);
 
   const handleChange = (e) => { 
-    setAmmount(e.target.value);
+    setAmount(e.target.value);
   };
 
   return (
@@ -14,10 +14,10 @@ function ProductItem(props) {
       <div className="product-image"></div>
       <div>£{props.price} each</div>
       <div className="add-remove-wrapper">  
-        <input type="number" className="ammount" value={ammount} onChange={handleChange}></input>
+        <input type="number" className="amount" value={amount} onChange={handleChange}></input>
 
-        <div className="set-ammount" onClick={() => {
-          props.setProductAmmount({id: props.id, name: props.name, price: props.price, ammount: +ammount})
+        <div className="set-amount" onClick={() => {
+          props.setProductAmount({id: props.id, name: props.name, price: props.price, amount: +amount})
         }}>Set</div>
       </div>
     </div>
