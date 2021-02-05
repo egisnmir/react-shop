@@ -4,6 +4,6 @@
 3. localhost:3000
 
 
-#### Some things to add could be:
+#### Some things that could be added:
 1. TypeScript
 2. Redux
