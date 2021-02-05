@@ -1,24 +1,11 @@
 import './App.scss';
+import { useState } from 'react';
 import Cart from './cart/Cart';
 import Products from './products/Products';
-import { useState } from 'react';
+import INITIAL_CART_CONTENT from './products/InitialCartContentJson';
+import PRODUCTS_LIST from './products/ProductsListJson';
 
 function App() {
-  const INITIAL_CART_CONTENT = [
-    {
-      id: 2,
-      name: 'Pink Lady Apple',
-      price: 0.39,
-      amount: 2
-    },
-    {
-      id: 6,
-      name: 'Pineapple',
-      price: 1.29,
-      amount: 4
-    }
-  ];
-
   const [cartContent, setCartContent] = useState(INITIAL_CART_CONTENT);
 
   const updateCartContents = (data) => {
@@ -43,7 +30,7 @@ function App() {
 
   return (
     <div className="app">
-      <Products updateCartContents={updateCartContents}></Products>
+      <Products products={PRODUCTS_LIST} updateCartContents={updateCartContents}></Products>
       <Cart cartContent={cartContent}></Cart>
     </div>
   );

@@ -1,13 +1,12 @@
 import './Products.scss';
 import ProductItem from './ProductItem';
-import ProductsList from './ProductsListJson';
 
 function Products(props) {
   const callback = (data) => {
     props.updateCartContents(data);
   };
 
-  const productsDOM = ProductsList.map((product) => {
+  const productsDOM = props.products.map((product) => {
     return (
       <ProductItem
         key={product.id}

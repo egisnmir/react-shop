@@ -1,4 +1,4 @@
-const ProductsList = [
+const PRODUCTS_LIST = [
   {
     id: 1,
     name: 'Granny Smith Apple',
@@ -41,4 +41,4 @@ const ProductsList = [
   }
 ];
 
-export default ProductsList;
+export default PRODUCTS_LIST;
