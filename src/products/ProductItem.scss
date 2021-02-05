@@ -1,8 +1,7 @@
 .product-item {
   position: relative;
-  border: 3px solid #9f9c9c;
-  background: lightgray;
-  border-radius: 10px;
+  background: white;
+  border-radius: 3px;
   width: 21%;
   height: 45%;
   text-align: center;
@@ -12,19 +11,23 @@
   box-sizing: border-box;
   justify-content: space-around;
 
+  .product-title {
+    font-weight: 500;
+  }
+
   .product-image {
     margin: 5px 20%;
-    border: 1px solid gray;
+    border: 1px solid #c4c4c4;
     flex-basis: 40%;
   }
-    
+
   .add-remove-wrapper {
     display: flex;
     justify-content: center;
     
     .set-ammount {
       cursor: pointer;
-      background: #376ccc;
+      background: rgb(8, 145, 178);
       color: white;
       height: 24px;
       width: 37px;
@@ -33,6 +36,7 @@
   
   .ammount {
     -moz-appearance: textfield;
+    border: 1px solid #c4c4c4;
     flex-basis: 40%;
     width: 0;
   }

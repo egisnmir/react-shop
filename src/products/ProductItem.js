@@ -10,7 +10,7 @@ function ProductItem(props) {
 
   return (
     <div className="product-item" key={props.id}>
-      <div>{props.name}</div>
+      <div className="product-title">{props.name}</div>
       <div className="product-image"></div>
       <div>£{props.price} each</div>
       <div className="add-remove-wrapper">  
