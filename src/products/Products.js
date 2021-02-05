@@ -5,7 +5,7 @@ import ProductsList from './ProductsListJson';
 function Products(props) {
   const callback = (data) => {
     props.updateCartContents(data);
-  }
+  };
 
   const productsDOM = ProductsList.map((product) => {
     return (

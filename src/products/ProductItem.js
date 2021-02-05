@@ -6,7 +6,7 @@ function ProductItem(props) {
 
   const handleChange = (e) => { 
     setAmmount(e.target.value);
-  }
+  };
 
   return (
     <div className="product-item" key={props.id}>

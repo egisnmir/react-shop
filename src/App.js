@@ -4,7 +4,7 @@ import Products from './products/Products';
 import { useState } from 'react';
 
 function App() {
-  const initialCartContent = [
+  const INITIAL_CART_CONTENT = [
     {
       id: 2,
       name: 'Pink Lady Apple',
@@ -19,7 +19,7 @@ function App() {
     }
   ];
 
-  const [cartContent, setCartContent] = useState(initialCartContent);
+  const [cartContent, setCartContent] = useState(INITIAL_CART_CONTENT);
 
   const updateCartContents = (data) => {
     const newContent = [...cartContent];
@@ -31,7 +31,7 @@ function App() {
         newContent.splice(dupeIndex, 1);
       } else {
         newContent[dupeIndex].ammount = data.ammount;
-      };
+      }
     } else {
       if(data.ammount > 0) {
         newContent.push(data);
