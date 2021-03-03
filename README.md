@@ -7,3 +7,4 @@
 #### Some things that could be added:
 1. TypeScript
 2. Redux
+3. Jest
