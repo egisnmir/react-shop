@@ -5,6 +5,6 @@
 
 
 #### Some things that could be added:
-1. TypeScript
-2. Redux
+1. Redux or useReducer + useContext
+2. TypeScript
 3. Jest
