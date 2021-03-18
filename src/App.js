@@ -12,20 +12,22 @@ function App() {
     const newContent = [...cartContent];
     const dupeIndex = newContent.findIndex(item => item.id === data.id);
 
-    //Handle duplicate
+    //Item already in cart, check if amount changed
     if(dupeIndex > -1) {
       if(data.amount <= 0) {
         newContent.splice(dupeIndex, 1);
-      } else {
+        setCartContent([...newContent]);
+      } else if(newContent[dupeIndex].amount !== data.amount) {
         newContent[dupeIndex].amount = data.amount;
+        setCartContent([...newContent]);
       }
     } else {
+      //Adding a new item
       if(data.amount > 0) {
         newContent.push(data);
+        setCartContent([...newContent]);
       }
     }
-
-    setCartContent([...newContent]);
   };
 
   return (

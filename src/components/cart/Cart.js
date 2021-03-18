@@ -18,7 +18,7 @@ function Cart(props) {
     setTotalPrice(newTotalPrice.toFixed(2));
   }, [props.cartContent]);
 
-  const cartDOM = props.cartContent.map((product) => {
+  const cartItems = props.cartContent.map((product) => {
     return (
       <div className="cart-item" key={product.id + 2}>
         <div className="remove">{product.remove}</div>
@@ -32,7 +32,7 @@ function Cart(props) {
   return (
     <div className="cart">
       <h4>Shopping Cart</h4>
-      {cartDOM}
+      {cartItems}
 
       {totalAmount && totalAmount &&
         <div className="cart-item cart-total">
@@ -43,6 +43,6 @@ function Cart(props) {
       }
     </div>
   );
-}
+};
 
 export default Cart;
