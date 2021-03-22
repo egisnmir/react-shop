@@ -21,7 +21,7 @@ function Cart(props) {
   const cartItems = props.cartContent.map((product) => {
     return (
       <div className="cart-item" key={product.id + 2}>
-        <div className="remove">{product.remove}</div>
+        <div className="remove" onClick={() => props.removeItem({...product, amount: 0})}>x </div>
         <div className="amount">{product.amount}</div>
         <div className="name">{product.name}</div>
         <div className="total-price">{(product.price * product.amount).toFixed(2)}</div>
@@ -32,15 +32,15 @@ function Cart(props) {
   return (
     <div className="cart">
       <h4>Shopping Cart</h4>
-      {cartItems}
+      {cartItems.length ? cartItems : 'Empty cart'}
 
-      {totalAmount && totalAmount &&
+      {totalAmount && totalAmount ?
         <div className="cart-item cart-total">
           <div className="amount">{totalAmount}</div>
           <div className="name">Total</div>
           <div className="total-price">{totalPrice}</div>
         </div>
-      }
+      : ''}
     </div>
   );
 };

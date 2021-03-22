@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="app">
       <Products products={PRODUCTS_LIST} updateCartContents={updateCartContents}></Products>
-      <Cart cartContent={cartContent}></Cart>
+      <Cart cartContent={cartContent} removeItem={updateCartContents}></Cart>
     </div>
   );
 }
