@@ -7,27 +7,32 @@ import PRODUCTS_LIST from './mockData/ProductsListJson';
 
 function App() {
   const [cartContent, setCartContent] = useState(INITIAL_CART_CONTENT);
+  let dupe = false;
 
   const updateCartContents = (data) => {
-    const newContent = [...cartContent];
-    const dupeIndex = newContent.findIndex(item => item.id === data.id);
-
-    //Item already in cart, check if amount changed
-    if(dupeIndex > -1) {
-      if(data.amount <= 0) {
-        newContent.splice(dupeIndex, 1);
-        setCartContent([...newContent]);
-      } else if(newContent[dupeIndex].amount !== data.amount) {
-        newContent[dupeIndex].amount = data.amount;
-        setCartContent([...newContent]);
+    const newContent = cartContent.reduce((result, item) => {
+      if(item.id === data.id) {
+        dupe = true;
+        //Remove item if new amount <= 0
+        if(data.amount <= 0) {
+          return result;
+        }
+        //Update item amount
+        item.amount = data.amount;
+        result.push(item);
+      } else {
+        result.push(item);
       }
-    } else {
-      //Adding a new item
-      if(data.amount > 0) {
-        newContent.push(data);
-        setCartContent([...newContent]);
-      }
+      
+      return result;
+    }, []);
+    
+    //Add a new item
+    if(!dupe && data.amount > 0) {
+      newContent.push(data);
     }
+
+    setCartContent([...newContent]);
   };
 
   return (
