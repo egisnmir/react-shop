@@ -19,11 +19,8 @@ function App() {
         }
         //Update item amount
         item.amount = data.amount;
-        result.push(item);
-      } else {
-        result.push(item);
       }
-      
+      result.push(item);      
       return result;
     }, []);
     
