@@ -20,10 +20,11 @@ function App() {
         //Update item amount
         item.amount = data.amount;
       }
-      result.push(item);      
+
+      result.push(item);
       return result;
     }, []);
-    
+
     //Add a new item
     if(!dupe && data.amount > 0) {
       newContent.push(data);
