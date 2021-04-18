@@ -5,6 +5,6 @@
 
 
 #### Some things that could be added:
-1. Redux or useReducer + useContext
-2. TypeScript
-3. Jest
+1. Some unit/integration/E2E tests
+2. Redux or useReducer/useContext
+3. TypeScript possibly
