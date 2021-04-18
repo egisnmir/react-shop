@@ -1,8 +1,8 @@
-import React from 'react';
-import { render, unmountComponentAtNode } from "react-dom";
+// import React from 'react';
+// import { render, unmountComponentAtNode } from "react-dom";
 
-describe('Header Testing', () => {
-  test('description', () => {
-    expect(1).toBe(1);
-  });
-});
+// describe('ProductItem Testing', () => {
+//   test('description', () => {
+//     expect(1).toBe(1);
+//   });
+// });
