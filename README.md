@@ -7,4 +7,4 @@
 #### Some things that could be added:
 1. Some unit/integration/E2E tests
 2. Redux or useReducer/useContext
-3. TypeScript possibly
+3. TypeScript
