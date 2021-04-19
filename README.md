@@ -4,6 +4,10 @@
 3. localhost:3000
 
 
+### Testing
+npx cypress open
+
+
 #### Some things that could be added:
 1. Unit tests - Jest
 2. Integration tests - react-testing-library
