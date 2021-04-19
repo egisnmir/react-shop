@@ -7,6 +7,4 @@
 #### Some things that could be added:
 1. Unit tests - Jest
 2. Integration tests - react-testing-library
-3. E2E tests - Cypress
-4. Redux or useReducer/useContext
-5. TypeScript
+3. Redux or useReducer/useContext
