@@ -2,8 +2,8 @@ import './App.scss';
 import { useState } from 'react';
 import Cart from './components/cart/Cart';
 import Products from './components/products/Products';
-import INITIAL_CART_CONTENT from './mockData/InitialCartContentJson';
-import PRODUCTS_LIST from './mockData/ProductsListJson';
+import INITIAL_CART_CONTENT from './mockData/InitialCartContent';
+import PRODUCTS_LIST from './mockData/ProductsList';
 
 function App() {
   const [cartContent, setCartContent] = useState(INITIAL_CART_CONTENT);
