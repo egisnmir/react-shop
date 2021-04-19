@@ -9,7 +9,7 @@ function ProductItem(props) {
   };
 
   return (
-    <div className="product-item" key={props.id}>
+    <div className="product-item" key={props.id} data-testid={props.id}>
       <div className="product-title">{props.name}</div>
       <div className="product-image"></div>
       <div>£{props.price} each</div>
