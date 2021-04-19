@@ -2,6 +2,7 @@ import './App.scss';
 import { useState } from 'react';
 import Cart from './components/cart/Cart';
 import Products from './components/products/Products';
+import Sidebar from './components/sidebar/Sidebar';
 import INITIAL_CART_CONTENT from './mockData/InitialCartContent';
 import PRODUCTS_LIST from './mockData/ProductsList';
 
@@ -35,6 +36,7 @@ function App() {
 
   return (
     <div className="app">
+      <Sidebar></Sidebar>
       <Products products={PRODUCTS_LIST} updateCartContents={updateCartContents}></Products>
       <Cart cartContent={cartContent} removeItem={updateCartContents}></Cart>
     </div>
