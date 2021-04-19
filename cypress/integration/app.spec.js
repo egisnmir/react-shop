@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-context('Cart testing', () => {
+context('Store testing', () => {
 
   beforeEach(() => {
     cy.visit('http://localhost:3000/')
