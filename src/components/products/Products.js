@@ -1,5 +1,5 @@
-import './products.scss';
-import ProductItem from './product-item';
+import './Products.scss';
+import ProductItem from './ProductItem';
 
 function Products(props) {
   const callback = (data) => {

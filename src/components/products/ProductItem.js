@@ -1,4 +1,4 @@
-import './product-item.scss';
+import './ProductItem.scss';
 import { useState } from 'react';
 
 function ProductItem(props) {

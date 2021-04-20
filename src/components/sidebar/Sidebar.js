@@ -1,6 +1,6 @@
-import './sidebar.scss';
+import './Sidebar.scss';
 
-function Sidebar() {
+const Sidebar = () => {
 
   return (
     <div className="sidebar">

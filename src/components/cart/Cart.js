@@ -1,4 +1,4 @@
-import './cart.scss';
+import './Cart.scss';
 import { useState, useEffect } from 'react';
 
 function Cart(props) {
