@@ -1,5 +1,4 @@
-import './Sidebar.scss';
-// import { useState, useEffect } from 'react';
+import './sidebar.scss';
 
 function Sidebar() {
 
