@@ -1,6 +1,6 @@
 #### To run it locally simply do:
-1. npm install
-2. npm start
+1. yarn install
+2. yarn start
 3. localhost:3000
 
 
