@@ -20,7 +20,7 @@ function Products(props) {
 
   return (
     <div className="products">
-      <h4>Grocery Store</h4>
+      <h4>Products list</h4>
       <div className="products-wrapper">
         {productsDOM}
       </div>
