@@ -1,11 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import ProductsList from "../components/products/ProductsList";
 import PRODUCTS_LIST from "../mockData/ProductsList";
 import INITIAL_CART_CONTENT from "../mockData/InitialCartContent";
+import Cart from "../components/cart/Cart";
 
-export default function Products() {
+export default function ProductsPage() {
+    //TODO: Obviously this has to be changed
     const [cartContent, setCartContent] = useState(INITIAL_CART_CONTENT);
     let dupe = false;
+
+    useEffect(() => {
+        console.log('TODO: products API call');
+    }, []);
+
+    //TODO:
+    const removeItem = () => {
+        console.log('removeItem() in ProductsPage');
+    }
 
     const updateCartContents = (data) => {
         const newContent = cartContent.reduce((result, item) => {
@@ -35,7 +47,15 @@ export default function Products() {
         <main>
             <h4>Products page</h4>
 
-            <ProductsList products={PRODUCTS_LIST} updateCartContents={updateCartContents}></ProductsList>
+            <ProductsList
+                products={PRODUCTS_LIST}
+                updateCartContents={updateCartContents}>
+            </ProductsList>
+            <Cart
+                cartContent={cartContent}
+                removeItem={removeItem}
+            >
+            </Cart>
         </main>
     )
 }

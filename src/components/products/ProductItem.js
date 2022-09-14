@@ -14,10 +14,21 @@ function ProductItem(props) {
       <div className="product-image"></div>
       <div>£{props.price} each</div>
       <div className="add-remove-wrapper">  
-        <input type="number" min="0" className="amount" value={amount} onChange={handleChange}></input>
+        <input
+          type="number"
+          min="0"
+          className="amount"
+          value={amount}
+          onChange={handleChange}
+        ></input>
 
         <div className="set-amount" onClick={() => {
-          props.setProductAmount({id: props.id, name: props.name, price: props.price, amount: +amount})
+          props.setProductAmount({
+            id: props.id,
+            name: props.name,
+            price: props.price,
+            amount: +amount
+          })
         }}>Set</div>
       </div>
     </div>

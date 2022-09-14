@@ -7,9 +7,9 @@ import {
 import { createRoot } from 'react-dom/client';
 import './index.scss';
 import App from './App';
-import Products from './routes/Products';
-import Cart from './routes/Cart';
-import Home from './routes/Home';
+import ProductsPage from './routes/ProductsPage';
+import CartPage from './routes/CartPage';
+import HomePage from './routes/HomePage';
 import reportWebVitals from './reportWebVitals';
 
 const container = document.getElementById('root');
@@ -19,9 +19,9 @@ root.render(
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<App />}>
-                <Route index element={<Home />} />
-                <Route path="/products" element={<Products />} />
-                <Route path="/cart" element={<Cart />} />
+                <Route index element={<HomePage />} />
+                <Route path="/products" element={<ProductsPage />} />
+                <Route path="/cart" element={<CartPage />} />
             </Route>
         </Routes>
     </BrowserRouter>

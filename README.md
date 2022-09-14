@@ -11,10 +11,11 @@ npx cypress open
 #### Some things that could be added:
 1. Unit tests - Jest
 2. Integration tests - react-testing-library
-3. Redux or useReducer/useContext
 
 
 #### Features to add:
 1. Add to wish list feature and a wish list page
 2. Add detailed product page
 3. Allow to add products for comparison
+4. Products should get data from an API (using fetch or axios)
+5. Pass the cart contents through a context
