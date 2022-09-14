@@ -38,6 +38,26 @@ const PRODUCTS_LIST = [
     id: 8,
     name: 'Peaches',
     price: 0.19
+  },
+  {
+    id: 9,
+    name: 'Apple',
+    price: 0.35
+  },
+  {
+    id: 10,
+    name: 'Pear',
+    price: 0.4
+  },
+  {
+    id: 11,
+    name: 'Tangerine',
+    price: 0.6
+  },
+  {
+    id: 12,
+    name: 'Fruit',
+    price: 0.2
   }
 ];
 

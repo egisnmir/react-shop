@@ -1,7 +1,7 @@
 import './Products.scss';
 import ProductItem from './ProductItem';
 
-function Products(props) {
+function ProductsList(props) {
   const callback = (data) => {
     props.updateCartContents(data);
   };
@@ -28,4 +28,4 @@ function Products(props) {
   );
 }
 
-export default Products;
+export default ProductsList;
