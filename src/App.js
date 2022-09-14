@@ -1,9 +1,8 @@
 import './App.scss';
 import { Outlet, Link } from 'react-router-dom';
-import Cart from './components/cart/Cart';
 import Sidebar from './components/sidebar/Sidebar';
-import INITIAL_CART_CONTENT from './mockData/InitialCartContent';
-import PRODUCTS_LIST from './mockData/ProductsList';
+// import Cart from './components/cart/Cart';
+// import INITIAL_CART_CONTENT from './mockData/InitialCartContent';
 
 function App() {
   return (
@@ -14,13 +13,9 @@ function App() {
         <nav>
           <Link to="/">Home</Link>
           <Link to="/products">Products</Link>
-          {/* <Link to={{pathname:"/", state: {fromDashboard: true }}}>Products</Link> */}
-          
           <Link to="/cart">Cart</Link>
         </nav>
-        <Outlet>
-
-        </Outlet>
+        <Outlet />
       </div>
       {/* <Cart cartContent={INITIAL_CART_CONTENT} removeItem={updateCartContents}></Cart> */}
     </div>

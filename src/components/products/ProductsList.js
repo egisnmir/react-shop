@@ -1,4 +1,4 @@
-import './Products.scss';
+import './ProductsList.scss';
 import ProductItem from './ProductItem';
 
 function ProductsList(props) {
