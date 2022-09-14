@@ -4,7 +4,7 @@
 3. localhost:3000
 
 
-### Testing
+#### Testing
 npx cypress open
 
 
@@ -12,3 +12,9 @@ npx cypress open
 1. Unit tests - Jest
 2. Integration tests - react-testing-library
 3. Redux or useReducer/useContext
+
+
+#### Features to add:
+1. Add to wish list feature and a wish list page
+2. Add detailed product page
+3. Allow to add products for comparison
