@@ -1,8 +1,8 @@
 import './App.scss';
 import { Outlet, Link } from 'react-router-dom';
 import Sidebar from './components/sidebar/Sidebar';
-import Cart from './components/cart/Cart';
-import INITIAL_CART_CONTENT from './mockData/InitialCartContent';
+// import Cart from './components/cart/Cart';
+// import INITIAL_CART_CONTENT from './mockData/InitialCartContent';
 
 function App() {
   return (
