@@ -9,7 +9,7 @@ function App() {
       <div className="content">
 
         <nav>
-          <Link to="/">Home</Link>
+          <Link to='/'>Home</Link>
           <Link to='/products'>Products</Link>
           <Link to='/cart'>Cart</Link>
           <Link to='/wish-list'>Wish list</Link>
@@ -17,7 +17,7 @@ function App() {
         
         <Outlet />
       </div>
-      {/* <Cart cartContent={INITIAL_CART_CONTENT} removeItem={updateCartContents}></Cart> */}
+      {/* TODO: <Cart></Cart> */}
     </div>
   );
 }

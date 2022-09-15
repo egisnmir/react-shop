@@ -14,8 +14,7 @@ npx cypress open
 
 
 #### Features to add:
-1. Add to wish list feature and a wish list page
+1. Add to wish list feature
 2. Add detailed product page
 3. Allow to add products for comparison
 4. Products should get data from an API (using fetch or axios)
-5. Pass the cart contents through a context

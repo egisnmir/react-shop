@@ -3,26 +3,29 @@ import { useState, useEffect, useContext } from 'react';
 import CartContext from '../contexts/CartContext';
 
 function Cart(props) {
-  const [totalAmount, setTotalAmount] = useState('');
-  const [totalPrice, setTotalPrice] = useState('');
+  const [totalAmount, setTotalAmount] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
 
-  const INITIAL_CART_CONTENT = useContext(CartContext);
-  console.log(INITIAL_CART_CONTENT);
+  const {
+    cartContent,
+    cartContentUpdate,
+    addToCart
+  } = useContext(CartContext);
 
   useEffect(() => {
     let newTotalAmount = 0;
     let newTotalPrice = 0;
 
-    props.cartContent.forEach(item => {
+    cartContent.forEach(item => {
       newTotalAmount += item.amount;
       newTotalPrice += item.price * item.amount;
     });
 
     setTotalAmount(newTotalAmount);
     setTotalPrice(newTotalPrice.toFixed(2));
-  }, [props.cartContent]);
+  }, [cartContent]);
 
-  const cartItems = props.cartContent.map((product) => {
+  const cartItems = cartContent.map((product) => {
     return (
       <div className="cart-item" key={product.id + 2}  data-testid={product.id}>
         <div className="remove" onClick={() => props.removeItem({...product, amount: 0})}>x </div>
@@ -43,6 +46,9 @@ function Cart(props) {
         <div className="name">Total</div>
         <div className="total-price" data-test="cart-total-price">{totalPrice}</div>
       </div>
+
+      <button className='test-button' onClick={cartContentUpdate}>cartContentUpdate()</button>
+      <button className='test-button' onClick={addToCart}>addToCart()</button>
     </div>
   );
 };

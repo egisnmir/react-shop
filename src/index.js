@@ -14,14 +14,13 @@ import {
     WishListPage
 } from './routes';
 import reportWebVitals from './reportWebVitals';
-import CartContext from './components/contexts/CartContext';
-import INITIAL_CART_CONTENT from './mockData/InitialCartContent';
+import { CartProvider } from './components/contexts/CartContext';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
 
 root.render(
-    <CartContext.Provider value={INITIAL_CART_CONTENT}>
+    <CartProvider>
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<App />}>
@@ -32,7 +31,7 @@ root.render(
                 </Route>
             </Routes>
         </BrowserRouter>
-    </CartContext.Provider>
+    </CartProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
