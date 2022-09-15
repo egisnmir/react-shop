@@ -1,9 +1,13 @@
 import './Cart.scss';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import CartContext from '../contexts/CartContext';
 
 function Cart(props) {
   const [totalAmount, setTotalAmount] = useState('');
   const [totalPrice, setTotalPrice] = useState('');
+
+  const INITIAL_CART_CONTENT = useContext(CartContext);
+  console.log(INITIAL_CART_CONTENT);
 
   useEffect(() => {
     let newTotalAmount = 0;

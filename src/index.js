@@ -7,24 +7,32 @@ import {
 import { createRoot } from 'react-dom/client';
 import './index.scss';
 import App from './App';
-import ProductsPage from './routes/ProductsPage';
-import CartPage from './routes/CartPage';
-import HomePage from './routes/HomePage';
+import {
+    ProductsPage,
+    CartPage,
+    HomePage,
+    WishListPage
+} from './routes';
 import reportWebVitals from './reportWebVitals';
+import CartContext from './components/contexts/CartContext';
+import INITIAL_CART_CONTENT from './mockData/InitialCartContent';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
 
 root.render(
-    <BrowserRouter>
-        <Routes>
-            <Route path="/" element={<App />}>
-                <Route index element={<HomePage />} />
-                <Route path="/products" element={<ProductsPage />} />
-                <Route path="/cart" element={<CartPage />} />
-            </Route>
-        </Routes>
-    </BrowserRouter>
+    <CartContext.Provider value={INITIAL_CART_CONTENT}>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<App />}>
+                    <Route index element={<HomePage />} />
+                    <Route path="/products" element={<ProductsPage />} />
+                    <Route path="/cart" element={<CartPage />} />
+                    <Route path="/wish-list" element={<WishListPage />} />
+                </Route>
+            </Routes>
+        </BrowserRouter>
+    </CartContext.Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
