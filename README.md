@@ -19,4 +19,5 @@ npx cypress open
 8. Products should get data from an API (using fetch or axios)
 9. Add themes using context
 10. Add highlight to navigation
-11. Add styled-components
+11. Add popup about 'added, removed, etc.'. Use toastr.js
+12. Add styled-components

@@ -1,9 +1,14 @@
+import { useState, useContext } from 'react';
 import './ProductItem.scss';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import CartContext from '../contexts/CartContext';
 
 function ProductItem(props) {
   const [amount, setAmount] = useState(0);
+
+  const {
+    updateCart
+  } = useContext(CartContext);
 
   const handleChange = (e) => { 
     setAmount(e.target.value);
@@ -19,7 +24,7 @@ function ProductItem(props) {
         </Link>
       }
       <div className="product-image"></div>
-      <div>£{props.price} each</div>
+      <div>{props.price}€ each</div>
       <div className="add-remove-wrapper">  
         <input
           type="number"
@@ -30,7 +35,8 @@ function ProductItem(props) {
         ></input>
 
         <div className="set-amount" onClick={() => {
-          props.setProductAmount({
+          //TODO: remove name & price, get in context
+          updateCart({
             id: props.id,
             name: props.name,
             price: props.price,
