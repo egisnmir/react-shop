@@ -9,14 +9,13 @@ npx cypress open
 
 
 #### Things to add:
-1. Add detailed product page
-2. Add product search input
-3. Add useReducer to contexts
-4. Testing. Jest, React Testing Library, Cypress
-5. Implement Tailwind
-6. Add favorites feature
-7. Add products comparison feature
-8. Products should get data from an API (using fetch or axios)
-9. Add themes using context
-10. Add popup about 'added, removed, etc.'. Use toastr.js
-11. Add styled-components
+* Add product search input
+* Add useReducer to contexts
+* Testing. Jest, React Testing Library, Cypress
+* Implement Tailwind
+* Add favorites feature
+* Add products comparison feature
+* Products should get data from an API (using fetch or axios)
+* Add themes using context
+* Add popup about 'added, removed, etc.'. Use toastr.js
+* Add styled-components
