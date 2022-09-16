@@ -14,7 +14,10 @@ npx cypress open
 
 
 #### Features to add:
-1. Add to wish list feature
-2. Add detailed product page
-3. Allow to add products for comparison
-4. Products should get data from an API (using fetch or axios)
+1. Add useReducer to contexts
+2. Add to wish list feature
+3. Add detailed product page
+4. Allow to add products for comparison
+5. Products should get data from an API (using fetch or axios)
+6. Add themes using context
+7. Add styled-components

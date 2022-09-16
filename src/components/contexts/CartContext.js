@@ -1,8 +1,6 @@
 import { useState, createContext } from 'react';
 import INITIAL_CART_CONTENT from '../../mockData/InitialCartContent';
 
-const CartContext = createContext();
-
 //TODO: 
 const testCartItem = {
     id: 73,
@@ -10,6 +8,8 @@ const testCartItem = {
     price: 0.2,
     amount: 1
 };
+
+const CartContext = createContext();
 
 export function CartProvider({children}) {
     const [cartContent, setCartContent] = useState(INITIAL_CART_CONTENT);
