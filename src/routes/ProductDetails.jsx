@@ -8,7 +8,7 @@ export default function ProductDetailsPage() {
     const nameRef = useRef();
     const [productDetails, setProductDetails] = useState();
 
-    const changeNameColor = () => {
+    const changeNameStyle = () => {
         nameRef.current.style.color = 'red';
         nameRef.current.style.fontWeight = 'bold';
     }
@@ -32,7 +32,7 @@ export default function ProductDetailsPage() {
             <button onClick={() => navigate('/products')}>Return to products</button>
             <br />
             <br />
-            <button onClick={() => changeNameColor()}>Change name color</button>
+            <button onClick={() => changeNameStyle()}>Change name color</button>
         </main>
     )
 }

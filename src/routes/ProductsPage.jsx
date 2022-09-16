@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ProductsList from "../components/products/ProductsList";
 import PRODUCTS_LIST from "../mockData/ProductsList";
 // import Cart from "../components/cart/Cart";
