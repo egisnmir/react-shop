@@ -12,7 +12,7 @@ function App() {
           <Link to='/'>Home</Link>
           <Link to='/products'>Products</Link>
           <Link to='/cart'>Cart</Link>
-          <Link to='/wish-list'>Wish list</Link>
+          <Link to='/favorites'>Favorites</Link>
         </nav>
         
         <Outlet />

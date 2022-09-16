@@ -11,7 +11,8 @@ import {
     ProductsPage,
     CartPage,
     HomePage,
-    WishListPage
+    FavoritesPage,
+    ProductDetailsPage
 } from './routes';
 import reportWebVitals from './reportWebVitals';
 import { CartProvider } from './components/contexts/CartContext';
@@ -27,7 +28,8 @@ root.render(
                     <Route index element={<HomePage />} />
                     <Route path="/products" element={<ProductsPage />} />
                     <Route path="/cart" element={<CartPage />} />
-                    <Route path="/wish-list" element={<WishListPage />} />
+                    <Route path="/favorites" element={<FavoritesPage />} />
+                    <Route path="/product-details/:id" element={<ProductDetailsPage />} />
                 </Route>
             </Routes>
         </BrowserRouter>

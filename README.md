@@ -8,17 +8,14 @@
 npx cypress open
 
 
-#### Some things that could be added:
-1. Unit tests - Jest
-2. Integration tests - react-testing-library
-
-
-#### Features to add:
+#### Things to add:
 1. Add detailed product page
-2. Add useReducer to contexts
-3. Add to wish list feature
-4. Allow to add products for comparison
-5. Products should get data from an API (using fetch or axios)
-6. Add themes using context
-7. Add styled-components
-8. Switch to .jsx/.tsx
+2. Add product search input
+3. Add useReducer to contexts
+4. Testing. Jest, React Testing Library, Cypress
+5. Implement Tailwind
+6. Add favorites feature
+7. Add products comparison feature
+8. Products should get data from an API (using fetch or axios)
+9. Add themes using context
+10. Add styled-components

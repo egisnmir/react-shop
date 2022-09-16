@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function WishListPage() {
+export default function FavoritesPage() {
     return (
         <main>
-            <h4>Wish List page</h4>
+            <h4>Favorites page</h4>
         </main>
     )
 }

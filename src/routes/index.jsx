@@ -1,11 +1,13 @@
 import CartPage from "./CartPage";
 import HomePage from "./HomePage";
 import ProductsPage from "./ProductsPage";
-import WishListPage from "./WishListPage";
+import FavoritesPage from "./FavoritesPage";
+import ProductDetailsPage from "./ProductDetails";
 
 export {
     CartPage,
     HomePage,
     ProductsPage,
-    WishListPage
+    FavoritesPage,
+    ProductDetailsPage
 }

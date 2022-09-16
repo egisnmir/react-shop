@@ -1,4 +1,5 @@
 import './ProductItem.scss';
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 function ProductItem(props) {
@@ -10,7 +11,9 @@ function ProductItem(props) {
 
   return (
     <div className="product-item" key={props.id} data-testid={props.id}>
-      <div className="product-title">{props.name}</div>
+      <Link to={'/product-details/' + props.id} state={props.name}>
+        <div className="product-title">{props.name}</div>
+      </Link>
       <div className="product-image"></div>
       <div>£{props.price} each</div>
       <div className="add-remove-wrapper">  
