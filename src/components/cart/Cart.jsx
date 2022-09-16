@@ -10,7 +10,8 @@ function Cart(props) {
     cartContent,
     setDefaultCartContent,
     addTestItemToCart,
-    clearCart
+    clearCart,
+    removeItem
   } = useContext(CartContext);
 
   useEffect(() => {
@@ -29,7 +30,7 @@ function Cart(props) {
   const cartItems = cartContent.map((product) => {
     return (
       <div className="cart-item" key={product.id + 2}  data-testid={product.id}>
-        <div className="remove" onClick={() => props.removeItem({...product, amount: 0})}>x </div>
+        <div className="remove" onClick={() => removeItem({...product, amount: 0})}>x </div>
         <div className="amount">{product.amount}</div>
         <div className="name">{product.name}</div>
         <div className="total-price">{(product.price * product.amount).toFixed(2)}</div>

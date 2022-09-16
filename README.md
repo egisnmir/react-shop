@@ -11,7 +11,6 @@ npx cypress open
 #### Things to add:
 * Add product search input
 * Add favorites feature
-* Add "remove product from cart" feature
 * Add "total number of items" near cart nav link
 * Add useReducer to contexts
 * Implement Tailwind

@@ -62,13 +62,18 @@ export function CartProvider({children}) {
         setCartContent([]);
     }
 
+    const removeItem = (data) => {
+        updateCart(data);
+    }
+
     return (
         <CartContext.Provider value={{
             cartContent,
             setDefaultCartContent,
             updateCart,
             addTestItemToCart,
-            clearCart
+            clearCart,
+            removeItem
         }}>
             {children}
         </CartContext.Provider>
