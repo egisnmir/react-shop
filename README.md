@@ -21,3 +21,4 @@ npx cypress open
 5. Products should get data from an API (using fetch or axios)
 6. Add themes using context
 7. Add styled-components
+8. Switch to .tsx
