@@ -12,6 +12,7 @@ npx cypress open
 * Add product search input
 * Add favorites feature
 * Add "total number of items" near cart nav link
+* Add a check to see if count of items changed, send appropriate notification
 * Add useReducer to contexts
 * Implement Tailwind
 * Testing. Jest, React Testing Library, Cypress
