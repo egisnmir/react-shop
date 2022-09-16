@@ -1,21 +1,19 @@
-import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useEffect } from "react";
 import ProductsList from "../components/products/ProductsList";
 import PRODUCTS_LIST from "../mockData/ProductsList";
-import INITIAL_CART_CONTENT from "../mockData/InitialCartContent";
-import Cart from "../components/cart/Cart";
+// import Cart from "../components/cart/Cart";
 
 export default function ProductsPage() {
-    let dupe = false;
+    // let dupe = false;
 
     useEffect(() => {
         console.log('TODO: products API call');
     }, []);
 
     //TODO:
-    const removeItem = () => {
-        console.log('removeItem() in ProductsPage');
-    }
+    // const removeItem = () => {
+    //     console.log('removeItem() in ProductsPage');
+    // }
 
     // const updateCartContents = (data) => {
     //     const newContent = cartContent.reduce((result, item) => {
