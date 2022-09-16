@@ -18,6 +18,5 @@ npx cypress open
 * Testing. Jest, React Testing Library, Cypress
 * Add products comparison feature
 * Products should get data from an API (using fetch or axios)
-* Add popup about 'added, removed, etc.'. Use toastr.js
 * Add themes using context
 * Add styled-components

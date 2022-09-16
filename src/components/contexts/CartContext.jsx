@@ -1,5 +1,6 @@
 import { useState, createContext } from 'react';
 import INITIAL_CART_CONTENT from '../../mockData/InitialCartContent';
+import toastr from 'toastr';
 
 //TODO: Boilerplate test item
 const testCartItem = {
@@ -22,23 +23,26 @@ export function CartProvider({children}) {
         let dupe = false;
 
         const newContent = cartContent.reduce((result, item) => {
-        if(item.id === data.id) {
-            dupe = true;
-            //Remove item if new amount <= 0
-            if(data.amount <= 0) {
-            return result;
+            if(item.id === data.id) {
+                dupe = true;
+                //Remove item if new amount <= 0
+                if(data.amount <= 0) {
+                return result;
+                }
+                //Update item amount
+                item.amount = data.amount;
             }
-            //Update item amount
-            item.amount = data.amount;
-        }
 
-        result.push(item);
-        return result;
+            result.push(item);
+            return result;
         }, []);
 
         //Add a new item
         if(!dupe && data.amount > 0) {
-        newContent.push(data);
+            newContent.push(data);
+            toastr.success('New item added to cart');
+        } else {
+            toastr.info('Cart updated');
         }
 
         setCartContent([...newContent]);
