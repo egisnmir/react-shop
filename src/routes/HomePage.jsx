@@ -5,7 +5,8 @@ export default function HomePage() {
         <main>
             <h4>Home page</h4>
 
-            <div>Welcome to the homepage of the react shop</div>
+            <p>Welcome to the homepage of the react shop.</p>
+            <p>Please use the navigation bar.</p>
         </main>
     )
 }

@@ -18,4 +18,5 @@ npx cypress open
 7. Add products comparison feature
 8. Products should get data from an API (using fetch or axios)
 9. Add themes using context
-10. Add styled-components
+10. Add highlight to navigation
+11. Add styled-components

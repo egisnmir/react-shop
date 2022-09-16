@@ -1,5 +1,5 @@
 import './ProductItem.scss';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 
 function ProductItem(props) {
@@ -11,9 +11,13 @@ function ProductItem(props) {
 
   return (
     <div className="product-item" key={props.id} data-testid={props.id}>
-      <Link to={'/product-details/' + props.id} state={props.name}>
+      {props.noNav ?
         <div className="product-title">{props.name}</div>
-      </Link>
+        :
+        <NavLink to={'/product-details/' + props.id} state={props.name}>
+          <div className="product-title">{props.name}</div>
+        </NavLink>
+      }
       <div className="product-image"></div>
       <div>£{props.price} each</div>
       <div className="add-remove-wrapper">  
