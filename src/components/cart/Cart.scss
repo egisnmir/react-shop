@@ -1,34 +1,45 @@
 .cart {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 20%;
-  padding: 10px 25px 20px;
-  border-left: 1px solid #c4c4c4;
+  display: inline-block;
+  padding: 10px 0;
 
   .cart-item {
     display: flex;
-    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid lightgray;
+    margin-top: -1px;
 
     .name {
-      flex-basis: 70%;
+      width: 250px;
     }
 
     .remove {
+      width: 30px;
       color: red;
+      text-align: center;
       cursor: pointer;
 
       &:hover {
+        background-color: #5c5c5c;
+        color: white;
         opacity: 0.7;
       }
+    }
+
+    .amount {
+      width: 40px;
+      text-align: center;
     }
   }
 
   .cart-total {
+    font-weight: bold;
     margin-top: auto;
+    margin-top: -1px;
+    justify-content: flex-end;
   }
 
   .test-button {
-    width: 150px;
+    width: 170px;
     margin-top: 10px;
   }
 }

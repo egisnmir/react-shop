@@ -8,8 +8,9 @@ function Cart(props) {
 
   const {
     cartContent,
-    cartContentUpdate,
-    addToCart
+    setDefaultCartContent,
+    addTestItemToCart,
+    clearCart
   } = useContext(CartContext);
 
   useEffect(() => {
@@ -39,7 +40,7 @@ function Cart(props) {
   return (
     <div className="cart">
       <h4>Shopping Cart</h4>
-      {cartItems.length ? cartItems : 'Empty cart'}
+      {cartItems.length ? cartItems : ''}
 
       <div className="cart-item cart-total">
         <div className="amount" data-test="cart-amount">{totalAmount}</div>
@@ -47,8 +48,11 @@ function Cart(props) {
         <div className="total-price" data-test="cart-total-price">{totalPrice}</div>
       </div>
 
-      <button className='test-button' onClick={cartContentUpdate}>cartContentUpdate()</button>
-      <button className='test-button' onClick={addToCart}>addToCart()</button>
+      <button className='test-button' onClick={setDefaultCartContent}>setDefaultCartContent()</button>
+      <br />
+      <button className='test-button' onClick={addTestItemToCart}>addTestItemToCart()</button>
+      <br />
+      <button className='test-button' onClick={clearCart}>clearCart()</button>
     </div>
   );
 };
