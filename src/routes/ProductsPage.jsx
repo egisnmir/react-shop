@@ -6,10 +6,6 @@ import PRODUCTS_LIST from "../mockData/ProductsList";
 export default function ProductsPage() {
     // let dupe = false;
 
-    useEffect(() => {
-        console.log('TODO: products API call');
-    }, []);
-
     //TODO:
     // const removeItem = () => {
     //     console.log('removeItem() in ProductsPage');

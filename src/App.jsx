@@ -17,7 +17,6 @@ function App() {
         
         <Outlet />
       </div>
-      {/* TODO: <Cart></Cart> */}
     </div>
   );
 }
