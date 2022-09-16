@@ -8,7 +8,6 @@ export default function ProductDetailsPage() {
     const navigate = useNavigate();
     const [productDetails, setProductDetails] = useState();
 
-
     useEffect(() => {
         PRODUCTS_LIST.forEach((item) => {
             if(item.id === parseInt(params.id)) {
