@@ -1,8 +1,8 @@
-import { useState, createContext } from 'react';
+import { useState, createContext, useEffect } from 'react';
 import INITIAL_CART_CONTENT from '../../mockData/InitialCartContent';
 import toastr from 'toastr';
 
-//TODO: Boilerplate test item
+//Boilerplate test item
 const testCartItem = {
     id: 1,
     name: 'Test item',
@@ -14,9 +14,28 @@ const CartContext = createContext();
 
 export function CartProvider({children}) {
     const [cartContent, setCartContent] = useState(INITIAL_CART_CONTENT);
+    const [totalAmount, setTotalAmount] = useState(0);
+    const [totalPrice, setTotalPrice] = useState(0);
+
+    useEffect(() => {
+        updateTotalPriceAndAmount();
+    }, [cartContent]);
+
+    const updateTotalPriceAndAmount = () => {
+        let newTotalAmount = 0;
+        let newTotalPrice = 0;
+
+        cartContent.forEach(item => {
+          newTotalAmount += item.amount;
+          newTotalPrice += item.price * item.amount;
+        });
+
+        setTotalAmount(newTotalAmount);
+        setTotalPrice(newTotalPrice.toFixed(2));
+    }
 
     const setDefaultCartContent = () => {
-        setCartContent(INITIAL_CART_CONTENT)
+        setCartContent(INITIAL_CART_CONTENT);
     }
 
     const updateCart = (data) => {
@@ -25,10 +44,12 @@ export function CartProvider({children}) {
         const newContent = cartContent.reduce((result, item) => {
             if(item.id === data.id) {
                 dupe = true;
+
                 //Remove item if new amount <= 0
                 if(data.amount <= 0) {
-                return result;
+                    return result;
                 }
+
                 //Update item amount
                 item.amount = data.amount;
             }
@@ -45,17 +66,17 @@ export function CartProvider({children}) {
             toastr.info('Cart updated');
         }
 
-        setCartContent([...newContent]);
+        setCartContent([...newContent])
     }
 
     const addTestItemToCart = () => {
-        setCartContent((state) => [
-            ...state,
+        setCartContent([
+            ...cartContent,
             {
                 ...testCartItem,
                 id: parseInt(Math.random() * 1000)
             }
-        ])
+        ]);
     }
 
     const clearCart = () => {
@@ -63,12 +84,14 @@ export function CartProvider({children}) {
     }
 
     const removeItem = (data) => {
-        updateCart(data);
+        setCartContent(data);
     }
 
     return (
         <CartContext.Provider value={{
             cartContent,
+            totalAmount,
+            totalPrice,
             setDefaultCartContent,
             updateCart,
             addTestItemToCart,

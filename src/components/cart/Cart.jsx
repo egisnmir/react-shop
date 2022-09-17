@@ -1,31 +1,17 @@
 import './Cart.scss';
-import { useState, useEffect, useContext } from 'react';
+import { useContext } from 'react';
 import CartContext from '../contexts/CartContext';
 
-function Cart(props) {
-  const [totalAmount, setTotalAmount] = useState(0);
-  const [totalPrice, setTotalPrice] = useState(0);
-
+function Cart() {
   const {
     cartContent,
+    totalAmount,
+    totalPrice,
     setDefaultCartContent,
     addTestItemToCart,
     clearCart,
     removeItem
   } = useContext(CartContext);
-
-  useEffect(() => {
-    let newTotalAmount = 0;
-    let newTotalPrice = 0;
-
-    cartContent.forEach(item => {
-      newTotalAmount += item.amount;
-      newTotalPrice += item.price * item.amount;
-    });
-
-    setTotalAmount(newTotalAmount);
-    setTotalPrice(newTotalPrice.toFixed(2));
-  }, [cartContent]);
 
   const cartItems = cartContent.map((product) => {
     return (
