@@ -11,7 +11,6 @@ npx cypress open
 #### Things to add:
 * Add "total number of items" near cart nav link
 * Add favorites feature
-
 * Add product search input
 * Add a check to see if count of items changed, send appropriate notification
 * Add a reviews page and a "write a review" form
