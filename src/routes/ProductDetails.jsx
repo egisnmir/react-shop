@@ -14,7 +14,7 @@ export default function ProductDetailsPage() {
                 setProductDetails(item);
             }
         })
-    }, []);
+    }, [params.id]);
 
     return (
         <main>
