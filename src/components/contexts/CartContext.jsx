@@ -83,6 +83,7 @@ export function CartProvider({children}) {
         setCartContent([]);
     }
 
+    //TODO: fix
     const removeItem = (data) => {
         setCartContent(data);
     }

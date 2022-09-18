@@ -9,6 +9,7 @@ npx cypress open
 
 
 #### Things to add:
+* Redux (toolkit)
 * Add "total number of items" near cart nav link
 * Add favorites feature
 * Add product search input
@@ -20,5 +21,6 @@ npx cypress open
 * Testing. Jest, React Testing Library, Cypress
 * Add products comparison feature
 * Products should get data from an API (using fetch or axios)
+  Maybe create a very simple backend with NodeJs
 * Add themes using context
 * Add styled-components
