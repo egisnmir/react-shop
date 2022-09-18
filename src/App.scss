@@ -28,3 +28,9 @@ nav {
   flex-direction: column;
   padding: 10px 25px 21px;
 }
+
+.products-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}

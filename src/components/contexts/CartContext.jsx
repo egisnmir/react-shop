@@ -12,7 +12,7 @@ const testCartItem = {
 
 const CartContext = createContext();
 
-export function CartProvider({children}) {
+export const CartProvider = ({children}) => {
     const [cartContent, setCartContent] = useState(INITIAL_CART_CONTENT);
     const [totalAmount, setTotalAmount] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);

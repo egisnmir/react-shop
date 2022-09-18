@@ -6,12 +6,9 @@
   width: 21%;
   height: 45%;
   text-align: center;
-  display: flex;
-  flex-direction: column;
   padding: 15px 10px;
-  margin: 10px 0;
+  margin: 15px;
   box-sizing: border-box;
-  justify-content: space-around;
 
   .product-title {
     font-weight: 500;
@@ -22,6 +19,17 @@
     border: 1px solid #c4c4c4;
     flex-basis: 40%;
     min-height: 70px;
+  }
+
+  .heart-svg {
+    width: 20px;
+    height:20px;
+    color: rgba(209, 213, 219, 1);
+    cursor: pointer;
+
+    &.active {
+      color: #4f7087;
+    }
   }
 
   .add-remove-wrapper {
