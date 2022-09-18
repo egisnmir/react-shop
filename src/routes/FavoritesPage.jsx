@@ -29,7 +29,8 @@ export default function FavoritesPage() {
                         key={product.id}
                         id={product.id}
                         name={product.name}
-                        price={product.price}>
+                        price={product.price}
+                        noUpdate={true}>
                     </ProductItem>
                 })}
             </div>
