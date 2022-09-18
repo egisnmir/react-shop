@@ -4,7 +4,7 @@
 3. localhost:3000
 
 
-#### Testing
+#### Testing:
 npx cypress open
 
 
