@@ -10,6 +10,7 @@ npx cypress open
 
 #### Things to add:
 * Redux (toolkit)
+* TypeScript
 * Add "total number of items" near cart nav link
 * Add favorites feature
 * Add product search input
