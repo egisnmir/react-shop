@@ -28,7 +28,7 @@ export default function ProductDetailsPage() {
             </ProductItem>
 
             <br />
-            <button onClick={() => navigate('/products')}>Return to products</button>
+            <button onClick={() => navigate(-1)}>Return to products</button>
         </main>
     )
 }

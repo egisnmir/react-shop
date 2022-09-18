@@ -10,7 +10,7 @@ npx cypress open
 
 #### Bugs:
 * Fix "remove from cart" button
-* Fix routing. Clicking on product in "favorites" brings you to a different route
+* Fix "favorite" button in product details
 * Notifications are a bit messed up
 
 
