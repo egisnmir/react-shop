@@ -10,7 +10,7 @@ npx cypress open
 
 #### Bugs:
 * Fix "favorite" button in product details
-* Product update Notifications are a bit messed up
+* Product update Notifications are a bit messy
 
 
 #### Things to add:
@@ -22,5 +22,5 @@ npx cypress open
 * Products should get data from an API (fetch or axios)
   Maybe create a simple backend with NodeJs
 * Add themes using context
-* Implement Tailwind
+* Implement Tailwind?
 * Add styled-components?
