@@ -61,4 +61,11 @@ const PRODUCTS_LIST = [
   }
 ];
 
+export const TEST_PRODUCT = {
+  id: 1,
+  name: 'Test item',
+  price: 2,
+  amount: parseInt(Math.random() * 10) + 1
+}
+
 export default PRODUCTS_LIST;
