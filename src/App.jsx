@@ -1,15 +1,24 @@
-import { useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import './App.scss';
+import { getProducts } from './services/apiService';
 import Sidebar from './components/sidebar/Sidebar';
 import CartContext from './components/contexts/CartContext';
 import FavoritesContext from './components/contexts/FavoritesContext';
 
 function App() {
-  const { totalAmount } = useContext(CartContext);
+  const { setProductList, productContent, totalAmount } = useContext(CartContext);
   const { favorites } = useContext(FavoritesContext);
 
   const favoritesCount = favorites.length;
+    
+  useEffect(() => {
+      if(productContent.length === 0) {
+          getProducts().then((res) => {
+              setProductList(res.data);
+          });
+      }
+  }, []);
 
   return (
     <div className="app">

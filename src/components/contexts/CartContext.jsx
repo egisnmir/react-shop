@@ -13,12 +13,17 @@ const testProduct = {
 
 export const CartProvider = ({children}) => {
     const [cartContent, setCartContent] = useState(INITIAL_CART_CONTENT);
+    const [productContent, setProductContent] = useState([]);
     const [totalAmount, setTotalAmount] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
 
     useEffect(() => {
         updateTotalPriceAndAmount();
     }, [cartContent]);
+
+    const setProductList = (data) => {
+        setProductContent(data);
+    }
 
     const updateTotalPriceAndAmount = () => {
         let newTotalAmount = 0;
@@ -88,7 +93,9 @@ export const CartProvider = ({children}) => {
 
     return (
         <CartContext.Provider value={{
+            setProductList,
             cartContent,
+            productContent,
             totalAmount,
             totalPrice,
             setDefaultCartContent,

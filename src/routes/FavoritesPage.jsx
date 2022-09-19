@@ -1,12 +1,11 @@
-import React, { useRef, useContext, useState, useEffect } from "react";
-import axios from "axios";
+import React, { useRef, useContext, useState } from "react";
+import CartContext from "../components/contexts/CartContext";
 import FavoritesContext from "../components/contexts/FavoritesContext";
 import ProductItem from "../components/products/ProductItem";
 
 export default function FavoritesPage() {
+    const { productContent } = useContext(CartContext);
     const { favorites } = useContext(FavoritesContext);
-    const [productsList, setProductsList] = useState([]);
-    const [loaded, setLoaded] = useState(false);
 
     const nameRef = useRef();
 
@@ -14,13 +13,6 @@ export default function FavoritesPage() {
         nameRef.current.style.color = 'red';
         nameRef.current.style.fontWeight = 'bold';
     }
-
-    useEffect(() => {
-        axios.get('http://localhost:3001/products').then((res) => {
-            setProductsList(res.data);
-            setLoaded(true);
-        });
-    }, []);
 
     return (
         <main>
@@ -31,8 +23,8 @@ export default function FavoritesPage() {
             <br />
 
             <div className="products-wrapper">
-                {loaded && favorites.map((id) => {
-                    const product = productsList?.find(item => item.id === id);
+                {favorites.map((id) => {
+                    const product = productContent?.find(item => item.id === id);
 
                     return <ProductItem
                         key={product?.id}
