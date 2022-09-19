@@ -23,7 +23,5 @@ npx cypress open
 * TypeScript
 * Add useReducer to contexts
 * Testing. Jest, React Testing Library, Cypress
-  Maybe create a simple backend with NodeJs
 * Add themes using context
-* Implement Tailwind?
-* Add styled-components?
+* Add styled-components
