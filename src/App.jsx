@@ -1,9 +1,9 @@
-import './App.scss';
+import { useContext } from 'react';
 import { Outlet, Link } from 'react-router-dom';
+import './App.scss';
 import Sidebar from './components/sidebar/Sidebar';
 import CartContext from './components/contexts/CartContext';
 import FavoritesContext from './components/contexts/FavoritesContext';
-import { useContext } from 'react';
 
 function App() {
   const { totalAmount } = useContext(CartContext);

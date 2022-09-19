@@ -1,7 +1,8 @@
 #### To run it locally simply do:
 1. yarn install
 2. yarn start
-3. localhost:3000
+3. run backend at /backend/app.js using "node app.js"
+4. localhost:3000
 
 
 #### Testing:
@@ -14,12 +15,14 @@ npx cypress open
 
 
 #### Things to add:
+* Move requets to a service
+* Get cart content from an API
+
 * Add product search input
 * Redux (toolkit)
 * TypeScript
 * Add useReducer to contexts
 * Testing. Jest, React Testing Library, Cypress
-* Products should get data from an API (fetch or axios)
   Maybe create a simple backend with NodeJs
 * Add themes using context
 * Implement Tailwind?

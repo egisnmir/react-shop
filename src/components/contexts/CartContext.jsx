@@ -1,9 +1,15 @@
 import { useState, createContext, useEffect } from 'react';
 import INITIAL_CART_CONTENT from '../../mockData/InitialCartContent';
-import { TEST_PRODUCT } from '../../mockData/ProductsList';
 import toastr from 'toastr';
 
 const CartContext = createContext();
+
+const testProduct = {
+    id: 1,
+    name: 'Test item',
+    price: 2,
+    amount: parseInt(Math.random() * 10) + 1
+}
 
 export const CartProvider = ({children}) => {
     const [cartContent, setCartContent] = useState(INITIAL_CART_CONTENT);
@@ -66,7 +72,7 @@ export const CartProvider = ({children}) => {
         setCartContent([
             ...cartContent,
             {
-                ...TEST_PRODUCT,
+                ...testProduct,
                 id: parseInt(Math.random() * 1000)
             }
         ]);
