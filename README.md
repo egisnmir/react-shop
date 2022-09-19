@@ -9,7 +9,6 @@ npx cypress open
 
 
 #### Bugs:
-* Fix "remove item from cart" button
 * Fix "favorite" button in product details
 * Product update Notifications are a bit messed up
 
