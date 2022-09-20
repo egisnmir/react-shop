@@ -1,8 +1,23 @@
 import { useState, createContext, useEffect } from 'react';
-import INITIAL_CART_CONTENT from '../../mockData/InitialCartContent';
 import toastr from 'toastr';
 
 const CartContext = createContext();
+
+// Boilerplate, can be removed
+const INITIAL_CART_CONTENT = [
+    {
+        id: 2,
+        name: 'Pink Lady Apple',
+        price: 0.39,
+        amount: 2
+    },
+    {
+        id: 6,
+        name: 'Pineapple',
+        price: 1.29,
+        amount: 4
+    }
+];
 
 const testProduct = {
     id: 1,

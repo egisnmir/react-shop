@@ -15,7 +15,6 @@ npx cypress open
 
 
 #### Things to add:
-* Get cart content from an API
 * Add product search input
 * Redux (toolkit)
 * TypeScript
