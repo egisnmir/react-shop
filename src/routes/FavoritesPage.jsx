@@ -1,4 +1,4 @@
-import React, { useRef, useContext, useState } from "react";
+import React, { useRef, useContext } from "react";
 import CartContext from "../components/contexts/CartContext";
 import FavoritesContext from "../components/contexts/FavoritesContext";
 import ProductItem from "../components/products/ProductItem";

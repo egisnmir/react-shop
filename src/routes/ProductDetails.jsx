@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import axios from 'axios';
 import ProductItem from "../components/products/ProductItem";
+import { getProducts } from "../services/apiService";
 
 export default function ProductDetailsPage() {
     const params = useParams();
@@ -10,13 +10,13 @@ export default function ProductDetailsPage() {
     const [loaded, setLoaded] = useState(false);
     
     useEffect(() => {
-        axios.get('http://localhost:3001/products').then((res) => {
+        getProducts().then((res) => {
             res.data.forEach((item) => {
                 if(item.id === parseInt(params.id)) {
                     setProductDetails(item);
                     setLoaded(true);
                 }
-            })
+            });
         });
     }, []);
 
