@@ -10,7 +10,6 @@ npx cypress open
 
 
 #### Bugs:
-* Fix "favorite" button in product details
 * Product update Notifications are a bit messy
 
 

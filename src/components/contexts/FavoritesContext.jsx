@@ -14,10 +14,13 @@ function addOrRemove(array, value) {
 
 export const FavoritesProvider = ({children}) => {
     //TODO: Remove default favorites
-    const [favorites, setFavorites] = useState([2,3]);
+    const defaultFavorites = [2, 3];
+
+    const [favorites, setFavorites] = useState(defaultFavorites);
 
     const toggleFavorite = (id) => {
         const newFavorites = favorites.slice();
+        id = parseInt(id);
 
         addOrRemove(newFavorites, id);
         newFavorites.sort();
