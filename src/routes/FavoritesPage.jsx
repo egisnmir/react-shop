@@ -1,6 +1,6 @@
 import React, { useRef, useContext } from "react";
-import CartContext from "../components/contexts/CartContext";
-import FavoritesContext from "../components/contexts/FavoritesContext";
+import CartContext from "../core/contexts/CartContext";
+import FavoritesContext from "../core/contexts/FavoritesContext";
 import ProductItem from "../components/products/ProductItem";
 
 export default function FavoritesPage() {

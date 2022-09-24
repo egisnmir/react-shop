@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import './ProductsList.scss';
 import ProductItem from './ProductItem';
-import CartContext from '../contexts/CartContext';
+import CartContext from '../../core/contexts/CartContext';
 
 function ProductsList(props) {
     const { cartContent } = useContext(CartContext);

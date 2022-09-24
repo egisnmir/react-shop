@@ -17,7 +17,7 @@ npx cypress open
 * Add product search input
 * Redux (toolkit)
 * TypeScript
-* Add useReducer to contexts
 * Testing. Jest, React Testing Library, Cypress
 * Add themes using context
-* Add styled-components
+* Add styled-components ?
+* Add Tailwind ?

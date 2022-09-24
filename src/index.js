@@ -17,8 +17,8 @@ import {
     ProductDetailsPage
 } from './routes';
 import reportWebVitals from './reportWebVitals';
-import { CartProvider } from './components/contexts/CartContext';
-import { FavoritesProvider } from './components/contexts/FavoritesContext';
+import { CartProvider } from './core/contexts/CartContext';
+import { FavoritesProvider } from './core/contexts/FavoritesContext';
 import toastr from 'toastr';
 
 toastr.options = {

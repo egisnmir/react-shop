@@ -3,15 +3,16 @@ import { Outlet, Link } from 'react-router-dom';
 import './App.scss';
 import { getProducts } from './services/apiService';
 import Sidebar from './components/sidebar/Sidebar';
-import CartContext from './components/contexts/CartContext';
-import FavoritesContext from './components/contexts/FavoritesContext';
+import CartContext from './core/contexts/CartContext';
+import FavoritesContext from './core/contexts/FavoritesContext';
 
 function App() {
   const { setProductList, productContent, totalAmount } = useContext(CartContext);
   const { favorites } = useContext(FavoritesContext);
 
   const favoritesCount = favorites.length;
-    
+
+  // TODO: Can write a custom hook here. For cleaner code
   useEffect(() => {
       if(productContent.length === 0) {
           getProducts().then((res) => {

@@ -1,6 +1,6 @@
 import './Cart.scss';
 import { useContext } from 'react';
-import CartContext from '../contexts/CartContext';
+import CartContext from '../../core/contexts/CartContext';
 
 function Cart() {
   const {

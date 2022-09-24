@@ -1,8 +1,8 @@
 import { useState, useContext } from 'react';
 import './ProductItem.scss';
 import { Link } from 'react-router-dom';
-import CartContext from '../contexts/CartContext';
-import FavoritesContext from '../contexts/FavoritesContext';
+import CartContext from '../../core/contexts/CartContext';
+import FavoritesContext from '../../core/contexts/FavoritesContext';
 
 function ProductItem(props) {
   const [amount, setAmount] = useState(props.value);
