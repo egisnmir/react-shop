@@ -21,3 +21,5 @@ npx cypress open
 * Add themes using context
 * Add styled-components ?
 * Add Tailwind ?
+* Add data randomizer to backend with a 30-50% chance of changing data
+  to use websockets and memoization
