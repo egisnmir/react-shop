@@ -12,7 +12,7 @@ export default function HomePage() {
         <main>
             <h4>Home page</h4>
 
-            <p>Welcome to a react test shop. Please use the nav bar.</p>
+            <p>Welcome to a react test shop.</p>
             <p>Counter: { counter.count }</p>
             <p>Person name: { counter.personName }</p>
             <br />

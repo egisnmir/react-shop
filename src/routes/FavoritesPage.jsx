@@ -6,6 +6,10 @@ import ProductItem from "../components/products/ProductItem";
 export default function FavoritesPage() {
     const { productContent } = useContext(CartContext);
     const { favorites } = useContext(FavoritesContext);
+    
+    // There is an error here with the keys when loading the favorites page directly.
+    // it's because we are fetching data from the backend for the products list but
+    // the favorites list is just a hardcoded value in the context
 
     const nameRef = useRef();
 
