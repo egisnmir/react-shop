@@ -14,6 +14,7 @@ npx cypress open
 
 
 #### Things to add:
+* Switch favoritesContext to slice
 * Add product search input
 * Redux (toolkit)
 * TypeScript
@@ -23,4 +24,3 @@ npx cypress open
 * Add Tailwind ?
 * Add data randomizer to backend with a 30-50% chance of changing data
   to use websockets and memoization
-  
