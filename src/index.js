@@ -18,7 +18,6 @@ import {
 } from './routes';
 import reportWebVitals from './reportWebVitals';
 import { CartProvider } from './core/contexts/CartContext';
-import { FavoritesProvider } from './core/contexts/FavoritesContext';
 import toastr from 'toastr';
 
 toastr.options = {
@@ -32,19 +31,17 @@ const root = createRoot(container);
 root.render(
     <Provider store={store}>
         <CartProvider>
-            <FavoritesProvider>
-                <BrowserRouter>
-                    <Routes>
-                        <Route path="/" element={<App />}>
-                            <Route index element={<HomePage />} />
-                            <Route path="/products" element={<ProductsPage />} />
-                            <Route path="/cart" element={<CartPage />} />
-                            <Route path="/favorites" element={<FavoritesPage />} />
-                            <Route path="/product-details/:id" element={<ProductDetailsPage />} />
-                        </Route>
-                    </Routes>
-                </BrowserRouter>
-            </FavoritesProvider>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<App />}>
+                        <Route index element={<HomePage />} />
+                        <Route path="/products" element={<ProductsPage />} />
+                        <Route path="/cart" element={<CartPage />} />
+                        <Route path="/favorites" element={<FavoritesPage />} />
+                        <Route path="/product-details/:id" element={<ProductDetailsPage />} />
+                    </Route>
+                </Routes>
+            </BrowserRouter>
         </CartProvider>
     </Provider>
 );

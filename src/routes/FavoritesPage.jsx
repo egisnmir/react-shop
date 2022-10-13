@@ -1,11 +1,12 @@
 import React, { useRef, useContext } from "react";
 import CartContext from "../core/contexts/CartContext";
-import FavoritesContext from "../core/contexts/FavoritesContext";
 import ProductItem from "../components/products/ProductItem";
+import { useSelector } from "react-redux";
 
 export default function FavoritesPage() {
+    const favorites = useSelector(state => state.favorites);
+
     const { productContent } = useContext(CartContext);
-    const { favorites } = useContext(FavoritesContext);
     
     // There is an error here with the keys when loading the favorites page directly.
     // it's because we are fetching data from the backend for the products list but

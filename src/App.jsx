@@ -4,13 +4,13 @@ import './App.scss';
 import { getProducts } from './services/apiService';
 import Sidebar from './components/sidebar/Sidebar';
 import CartContext from './core/contexts/CartContext';
-import FavoritesContext from './core/contexts/FavoritesContext';
+import { useSelector } from 'react-redux';
 
 function App() {
   const { setProductList, productContent, totalAmount } = useContext(CartContext);
-  const { favorites } = useContext(FavoritesContext);
-
-  const favoritesCount = favorites.length;
+  
+  const favoritesFromStore = useSelector(state => state.favorites);
+  const favoritesCount = favoritesFromStore.length;
 
   // TODO: Can write a custom hook here. For cleaner code
   useEffect(() => {
