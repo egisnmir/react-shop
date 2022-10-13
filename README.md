@@ -15,7 +15,6 @@ npx cypress open
 
 #### Things to add:
 * Add product search input
-* Redux (toolkit)
 * TypeScript
 * Testing. Jest, React Testing Library, Cypress
 * Add themes using context
