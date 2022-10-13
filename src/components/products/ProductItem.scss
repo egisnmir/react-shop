@@ -10,8 +10,18 @@
   margin: 15px;
   box-sizing: border-box;
 
+  a {
+    text-decoration: none;
+    color: #3e3e3e;
+
+    &:hover {
+      color: #6489a3;
+    }
+  }
+
   .product-title {
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 16px;
   }
 
   .product-image {
