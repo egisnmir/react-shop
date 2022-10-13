@@ -14,7 +14,6 @@ npx cypress open
 
 
 #### Things to add:
-* Switch favoritesContext to slice
 * Add product search input
 * Redux (toolkit)
 * TypeScript
