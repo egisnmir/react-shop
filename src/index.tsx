@@ -22,11 +22,11 @@ import toastr from 'toastr';
 
 toastr.options = {
   "positionClass": "toast-top-center",
-  "timeOut": "1500"
+  "timeOut": 1500
 }
 
 const container = document.getElementById('root');
-const root = createRoot(container);
+const root = createRoot(container!);
 
 root.render(
     <Provider store={store}>
