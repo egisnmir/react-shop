@@ -3,7 +3,7 @@ import ProductsList from "../components/products/ProductsList";
 import CartContext from "../core/contexts/CartContext";
 
 export default function ProductsPage() {
-    const { productContent } = useContext(CartContext);
+    const { productContent } = useContext<any>(CartContext);
 
     return (
         <main>

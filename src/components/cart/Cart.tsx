@@ -1,6 +1,7 @@
 import './Cart.scss';
 import { useContext } from 'react';
 import CartContext from '../../core/contexts/CartContext';
+import Product from '../../core/interfaces/Product';
 
 function Cart() {
   const {
@@ -11,9 +12,9 @@ function Cart() {
     addTestItemToCart,
     clearCart,
     removeItem
-  } = useContext(CartContext);
+  } = useContext<any>(CartContext);
 
-  const cartItems = cartContent.map((product) => {
+  const cartItems = cartContent.map((product: Product) => {
     //TODO: Could be a separate component
     return (
       <div className="cart-item" key={product.id + 2}  data-testid={product.id}>

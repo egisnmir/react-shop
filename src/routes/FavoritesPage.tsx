@@ -4,15 +4,15 @@ import ProductItem from "../components/products/ProductItem";
 import { useSelector } from "react-redux";
 
 export default function FavoritesPage() {
-    const favorites = useSelector(state => state.favorites);
+    const favorites = useSelector((state: any) => state.favorites);
 
-    const { productContent } = useContext(CartContext);
+    const { productContent } = useContext<any>(CartContext);
     
     // There is an error here with the keys when loading the favorites page directly.
     // it's because we are fetching data from the backend for the products list but
     // the favorites list is just a hardcoded value in the context
 
-    const nameRef = useRef();
+    const nameRef = useRef<any>();
 
     const changeRefStyle = () => {
         nameRef.current.style.color = 'red';
@@ -28,8 +28,8 @@ export default function FavoritesPage() {
             <br />
 
             <div className="products-wrapper">
-                {favorites.map((id) => {
-                    const product = productContent?.find(item => item.id === id);
+                {favorites.map((id: any) => {
+                    const product = productContent?.find((item: any) => item.id === id);
 
                     return <ProductItem
                         key={product?.id}

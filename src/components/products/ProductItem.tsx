@@ -5,21 +5,21 @@ import CartContext from '../../core/contexts/CartContext';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleFavorite } from '../../core/slices/favoritesSlice';
 
-function ProductItem(props) {
+function ProductItem(props: any) {
   const dispatch = useDispatch();
-  const favorites = useSelector(state => state.favorites);
+  const favorites = useSelector((state: any) => state.favorites);
 
   const [amount, setAmount] = useState(props.value);
 
   const {
     updateCart
-  } = useContext(CartContext);
+  } = useContext<any>(CartContext);
 
-  const handleChange = (e) => { 
+  const handleChange = (e: any) => { 
     setAmount(e.target.value);
   };
 
-  const handleClickFavorite = (id) => {
+  const handleClickFavorite = (id: any) => {
     dispatch(toggleFavorite(id));
   }
 

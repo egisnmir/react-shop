@@ -7,9 +7,9 @@ import CartContext from './core/contexts/CartContext';
 import { useSelector } from 'react-redux';
 
 function App() {
-  const { setProductList, productContent, totalAmount } = useContext(CartContext);
+  const { setProductList, productContent, totalAmount } = useContext<any>(CartContext);
   
-  const favoritesFromStore = useSelector(state => state.favorites);
+  const favoritesFromStore = useSelector((state: any) => state.favorites);
   const favoritesCount = favoritesFromStore.length;
 
   // TODO: Can write a custom hook here. For cleaner code

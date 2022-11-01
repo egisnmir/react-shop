@@ -1,7 +1,8 @@
 import { useState, createContext, useEffect } from 'react';
 import toastr from 'toastr';
+import Product from '../interfaces/Product';
 
-const CartContext = createContext();
+const CartContext = createContext({});
 
 // Boilerplate, can be removed
 const INITIAL_CART_CONTENT = [
@@ -19,14 +20,14 @@ const INITIAL_CART_CONTENT = [
     }
 ];
 
-const testProduct = {
+const testProduct: Product = {
     id: 1,
     name: 'Test item',
     price: 2,
-    amount: parseInt(Math.random() * 10) + 1
+    amount: (Math.random() * 10) + 1
 }
 
-export const CartProvider = ({children}) => {
+export const CartProvider = ({children}: any) => {
     const [cartContent, setCartContent] = useState(INITIAL_CART_CONTENT);
     const [productContent, setProductContent] = useState([]);
     const [totalAmount, setTotalAmount] = useState(0);
@@ -36,7 +37,7 @@ export const CartProvider = ({children}) => {
         updateTotalPriceAndAmount();
     }, [cartContent]);
 
-    const setProductList = (data) => {
+    const setProductList = (data: any) => {
         setProductContent(data);
     }
 
@@ -50,17 +51,17 @@ export const CartProvider = ({children}) => {
         });
 
         setTotalAmount(newTotalAmount);
-        setTotalPrice(newTotalPrice.toFixed(2));
+        setTotalPrice(parseInt(newTotalPrice.toFixed(2)));
     }
 
     const setDefaultCartContent = () => {
         setCartContent(INITIAL_CART_CONTENT);
     }
 
-    const updateCart = (data) => {
+    const updateCart = (data: any) => {
         let dupe = false;
 
-        const newContent = cartContent.reduce((result, item) => {
+        const newContent = cartContent.reduce((result: any, item: any) => {
             if(item.id === data.id) {
                 dupe = true;
 
@@ -93,7 +94,7 @@ export const CartProvider = ({children}) => {
             ...cartContent,
             {
                 ...testProduct,
-                id: parseInt(Math.random() * 1000)
+                id: Math.random() * 1000
             }
         ]);
     }
@@ -102,7 +103,7 @@ export const CartProvider = ({children}) => {
         setCartContent([]);
     }
 
-    const removeItem = (data) => {
+    const removeItem = (data: any) => {
         updateCart(data);
     }
 

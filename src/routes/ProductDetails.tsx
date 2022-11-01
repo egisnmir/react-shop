@@ -3,16 +3,22 @@ import { useParams, useNavigate } from "react-router-dom";
 import ProductItem from "../components/products/ProductItem";
 import { getProducts } from "../services/apiService";
 
+interface ProductDetails {
+    id: number,
+    name: string,
+    price: number
+}
+
 export default function ProductDetailsPage() {
-    const params = useParams();
+    const params = useParams<any>();
     const navigate = useNavigate();
-    const [productDetails, setProductDetails] = useState();
+    const [productDetails, setProductDetails] = useState<ProductDetails>();
     const [loaded, setLoaded] = useState(false);
     
     useEffect(() => {
         getProducts().then((res) => {
-            res.data.forEach((item) => {
-                if(item.id === parseInt(params.id)) {
+            res.data.forEach((item: ProductDetails) => {
+                if(item.id === parseInt(params?.id ?? '0')) {
                     setProductDetails(item);
                     setLoaded(true);
                 }

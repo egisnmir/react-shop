@@ -2,12 +2,13 @@ import { useContext } from 'react';
 import './ProductsList.scss';
 import ProductItem from './ProductItem';
 import CartContext from '../../core/contexts/CartContext';
+import Product from '../../core/interfaces/Product';
 
-function ProductsList(props) {
-    const { cartContent } = useContext(CartContext);
+function ProductsList(props: any) {
+    const { cartContent } = useContext<any>(CartContext);
 
-    const productsDOM = props.products.map((product) => {
-        const cartProduct = cartContent.find(item => item.id === product.id);
+    const productsDOM = props.products.map((product: Product) => {
+        const cartProduct: Product = cartContent.find((item: Product) => item.id === product.id);
 
         return (
             <ProductItem
