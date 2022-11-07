@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+//TODO: Convert file to TS
+
 const favoritesSlice = createSlice({
     name: 'favorites',
     initialState: [2, 4, 5, 7],

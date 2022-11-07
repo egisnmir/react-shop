@@ -16,14 +16,22 @@ export default function ProductDetailsPage() {
     const [loaded, setLoaded] = useState(false);
     
     useEffect(() => {
+        let isCancelled = false;
+
         getProducts().then((res) => {
             res.data.forEach((item: ProductDetails) => {
                 if(item.id === parseInt(params?.id ?? '0')) {
-                    setProductDetails(item);
-                    setLoaded(true);
+                    if(isCancelled) {
+                        setProductDetails(item);
+                        setLoaded(true);
+                    }
                 }
             });
         });
+
+        return () => {
+            isCancelled = true;
+        }
     }, []);
 
     return (
