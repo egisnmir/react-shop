@@ -10,7 +10,7 @@ interface ProductDetails {
 }
 
 export default function ProductDetailsPage() {
-    const params = useParams<any>();
+    const params = useParams();
     const navigate = useNavigate();
     const [productDetails, setProductDetails] = useState<ProductDetails>();
     const [loaded, setLoaded] = useState(false);
