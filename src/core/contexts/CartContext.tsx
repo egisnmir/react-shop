@@ -24,7 +24,7 @@ const testProduct: Product = {
     id: 1,
     name: 'Test item',
     price: 2,
-    amount: (Math.random() * 10) + 1
+    amount: Math.floor((Math.random() * 10) + 1)
 }
 
 export const CartProvider = ({children}: any) => {
@@ -94,7 +94,8 @@ export const CartProvider = ({children}: any) => {
             ...cartContent,
             {
                 ...testProduct,
-                id: Math.random() * 1000
+                amount: Math.floor((Math.random() * 10) + 1),
+                id: Math.floor(Math.random() * 10000) + 1
             }
         ]);
     }
