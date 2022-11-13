@@ -19,7 +19,7 @@ function ProductItem(props: any) {
     setAmount(e.target.value);
   };
 
-  const handleClickFavorite = (id: any) => {
+  const handleClickFavorite = (id: number) => {
     dispatch(toggleFavorite(id));
   }
 
