@@ -9,14 +9,14 @@ function ProductItem(props: any) {
   const dispatch = useDispatch();
   const favorites = useSelector((state: any) => state.favorites);
 
-  const [amount, setAmount] = useState(props.value);
+  const [amount, setAmount] = useState<number>(props.value);
 
   const {
     updateCart
   } = useContext<any>(CartContext);
 
-  const handleChange = (e: any) => { 
-    setAmount(e.target.value);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => { 
+    setAmount(Number(e.target.value));
   };
 
   const handleClickFavorite = (id: number) => {

@@ -28,10 +28,10 @@ const testProduct: Product = {
 }
 
 export const CartProvider = ({children}: any) => {
-    const [cartContent, setCartContent] = useState(INITIAL_CART_CONTENT);
+    const [cartContent, setCartContent] = useState<Product[]>(INITIAL_CART_CONTENT);
     const [productContent, setProductContent] = useState([]);
-    const [totalAmount, setTotalAmount] = useState(0);
-    const [totalPrice, setTotalPrice] = useState(0);
+    const [totalAmount, setTotalAmount] = useState<number>();
+    const [totalPrice, setTotalPrice] = useState<number>();
 
     useEffect(() => {
         updateTotalPriceAndAmount();

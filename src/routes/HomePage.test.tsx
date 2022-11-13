@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import HomePage from '../routes/HomePage';
+import HomePage from './HomePage';
 
 test('loads and displays the Home page title', () => {
     render(<HomePage />);
