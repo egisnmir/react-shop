@@ -15,11 +15,9 @@ npx cypress open
 
 #### Things to add:
 * Add product search input
-* TypeScript
-* Testing. Jest, React Testing Library, Cypress
+* Improve TypeScript
+* Testing. React Testing Library, Cypress
 
 * Add themes using context
-* Add styled-components ?
-* Add Tailwind ?
 * Add data randomizer to backend with a 30-50% chance of changing data
-  to use websockets and memoization
+  to use memoization

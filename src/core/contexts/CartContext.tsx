@@ -5,7 +5,7 @@ import Product from '../interfaces/Product';
 const CartContext = createContext({});
 
 // Boilerplate, can be removed
-const INITIAL_CART_CONTENT = [
+const INITIAL_CART_CONTENT: Product[] = [
     {
         id: 2,
         name: 'Pink Lady Apple',
@@ -58,10 +58,10 @@ export const CartProvider = ({children}: any) => {
         setCartContent(INITIAL_CART_CONTENT);
     }
 
-    const updateCart = (data: any) => {
+    const updateCart = (data: Product) => {
         let dupe = false;
 
-        const newContent = cartContent.reduce((result: any, item: any) => {
+        const newContent: Product[] = cartContent.reduce((result: Product[], item: Product) => {
             if(item.id === data.id) {
                 dupe = true;
 
@@ -104,7 +104,7 @@ export const CartProvider = ({children}: any) => {
         setCartContent([]);
     }
 
-    const removeItem = (data: any) => {
+    const removeItem = (data: Product) => {
         updateCart(data);
     }
 
