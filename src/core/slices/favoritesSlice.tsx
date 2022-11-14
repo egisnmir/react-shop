@@ -1,7 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-//TODO: Convert file to TS
-
 const favoritesSlice = createSlice({
     name: 'favorites',
     initialState: [2, 4, 5, 7],
@@ -15,7 +13,7 @@ const favoritesSlice = createSlice({
     }
 });
 
-function addOrRemove(array, value) {
+function addOrRemove(array: number[], value: number) {
     let index = array.indexOf(value);
 
     if (index === -1) {
