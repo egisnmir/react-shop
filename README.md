@@ -11,11 +11,13 @@ npx cypress open
 
 #### Bugs:
 * Product update Notifications are a bit messy
+* Favorites page. There is an error here with the keys when loading the favorites page directly.
+  it's because we are fetching data from the backend for the products list but
+  the favorites list is just a hardcoded value in the context
 
 
 #### Things to add:
 * Add product search input
-* Improve TypeScript
 * Unit & integration testing. React Testing Library
 * E2E testing. Cypress
 
