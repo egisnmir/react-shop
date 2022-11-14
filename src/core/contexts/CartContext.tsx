@@ -1,11 +1,29 @@
 import { useState, createContext, useEffect } from 'react';
 import toastr from 'toastr';
-import Product from '../interfaces/Product';
+import IProduct from '../interfaces/Product';
 
-const CartContext = createContext({});
+interface ICartContext {
+    setProductList?: (data: any) => void,
+    cartContent?: IProduct[],
+    productContent?: IProduct[],
+    totalAmount: number,
+    totalPrice: number,
+    setDefaultCartContent?: () => void,
+    updateCart?: (data: IProduct) => void,
+    addTestItemToCart?: () => void,
+    clearCart?: () => void,
+    removeItem?: (data: IProduct) => void
+}
+
+const defaultState = {
+    totalAmount: 0,
+    totalPrice: 0
+}
+
+const CartContext = createContext<ICartContext>(defaultState);
 
 // Boilerplate, can be removed
-const INITIAL_CART_CONTENT: Product[] = [
+const defaultCartContent: IProduct[] = [
     {
         id: 2,
         name: 'Pink Lady Apple',
@@ -20,7 +38,7 @@ const INITIAL_CART_CONTENT: Product[] = [
     }
 ];
 
-const testProduct: Product = {
+const testProduct: IProduct = {
     id: 1,
     name: 'Test item',
     price: 2,
@@ -28,10 +46,10 @@ const testProduct: Product = {
 }
 
 export const CartProvider = ({children}: any) => {
-    const [cartContent, setCartContent] = useState<Product[]>(INITIAL_CART_CONTENT);
+    const [cartContent, setCartContent] = useState<IProduct[]>(defaultCartContent);
     const [productContent, setProductContent] = useState([]);
-    const [totalAmount, setTotalAmount] = useState<number>();
-    const [totalPrice, setTotalPrice] = useState<number>();
+    const [totalAmount, setTotalAmount] = useState(defaultState.totalAmount);
+    const [totalPrice, setTotalPrice] = useState(defaultState.totalPrice);
 
     useEffect(() => {
         updateTotalPriceAndAmount();
@@ -55,13 +73,16 @@ export const CartProvider = ({children}: any) => {
     }
 
     const setDefaultCartContent = () => {
-        setCartContent(INITIAL_CART_CONTENT);
+        defaultCartContent[0].amount = 2;
+        defaultCartContent[1].amount = 4;
+        
+        setCartContent(defaultCartContent);
     }
 
-    const updateCart = (data: Product) => {
+    const updateCart = (data: IProduct) => {
         let dupe = false;
 
-        const newContent: Product[] = cartContent.reduce((result: Product[], item: Product) => {
+        const newContent: IProduct[] = cartContent.reduce((result: IProduct[], item: IProduct) => {
             if(item.id === data.id) {
                 dupe = true;
 
@@ -104,7 +125,7 @@ export const CartProvider = ({children}: any) => {
         setCartContent([]);
     }
 
-    const removeItem = (data: Product) => {
+    const removeItem = (data: IProduct) => {
         updateCart(data);
     }
 

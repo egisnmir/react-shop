@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom';
 import CartContext from '../../core/contexts/CartContext';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleFavorite } from '../../core/slices/favoritesSlice';
+import IProduct from '../../core/interfaces/Product';
 
-function ProductItem(props: any) {
+const ProductItem: React.FC<any> = (props: IProduct) => {
   const dispatch = useDispatch();
   const favorites = useSelector((state: any) => state.favorites);
 
-  const [amount, setAmount] = useState<number>(props.value);
+  const [amount, setAmount] = useState<number>(props?.amount || 0);
 
   const {
     updateCart
@@ -34,7 +35,7 @@ function ProductItem(props: any) {
       }
       <div className="product-image"></div>
       <svg
-        className={`heart-svg ${favorites.includes(parseInt(props.id)) ? 'active' : ''}`}
+        className={`heart-svg ${favorites.includes(props.id) ? 'active' : ''}`}
         onClick={() => handleClickFavorite(props.id)}>
           <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
             fill="currentColor">

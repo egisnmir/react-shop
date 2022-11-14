@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import ProductItem from "../components/products/ProductItem";
 import { getProducts } from "../services/apiService";
 
-interface ProductDetails {
+interface IProductDetails {
     id: number,
     name: string,
     price: number
@@ -12,14 +12,14 @@ interface ProductDetails {
 export default function ProductDetailsPage() {
     const params = useParams();
     const navigate = useNavigate();
-    const [productDetails, setProductDetails] = useState<ProductDetails>();
+    const [productDetails, setProductDetails] = useState<IProductDetails>();
     const [loaded, setLoaded] = useState(false);
     
     useEffect(() => {
         let cancelled = false;
 
         getProducts().then((res) => {
-            res.data.forEach((item: ProductDetails) => {
+            res.data.forEach((item: IProductDetails) => {
                 if(item.id === parseInt(params.id ?? '0')) {
                     if(!cancelled) {
                         setProductDetails(item);
