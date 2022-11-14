@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, FC } from 'react';
 import './ProductsList.scss';
 import ProductItem from './ProductItem';
 import CartContext from '../../core/contexts/CartContext';
@@ -8,7 +8,7 @@ interface IProductsList {
     products: IProduct[]
 }
 
-const ProductsList: React.FC<any> = (props: IProductsList) => {
+const ProductsList: FC<any> = (props: IProductsList) => {
     const { cartContent } = useContext<any>(CartContext);
 
     const productsDOM = props.products.map((product: IProduct) => {

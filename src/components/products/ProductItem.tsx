@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, FC, ChangeEvent } from 'react';
 import './ProductItem.scss';
 import { Link } from 'react-router-dom';
 import CartContext from '../../core/contexts/CartContext';
@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toggleFavorite } from '../../core/slices/favoritesSlice';
 import IProduct from '../../core/interfaces/Product';
 
-const ProductItem: React.FC<any> = (props: IProduct) => {
+const ProductItem: FC<any> = (props: IProduct) => {
   const dispatch = useDispatch();
   const favorites = useSelector((state: any) => state.favorites);
 
@@ -16,7 +16,7 @@ const ProductItem: React.FC<any> = (props: IProduct) => {
     updateCart
   } = useContext<any>(CartContext);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => { 
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => { 
     setAmount(Number(e.target.value));
   };
 
