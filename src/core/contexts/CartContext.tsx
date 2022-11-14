@@ -1,6 +1,7 @@
 import { useState, createContext, useEffect } from 'react';
 import toastr from 'toastr';
 import IProduct from '../interfaces/Product';
+import { getDefaultCartContent } from '../../services/apiService';
 
 interface ICartContext {
     setProductList?: (data: any) => void,
@@ -22,22 +23,6 @@ const defaultState = {
 
 const CartContext = createContext<ICartContext>(defaultState);
 
-// Boilerplate, can be removed
-const defaultCartContent: IProduct[] = [
-    {
-        id: 2,
-        name: 'Pink Lady Apple',
-        price: 0.39,
-        amount: 2
-    },
-    {
-        id: 6,
-        name: 'Pineapple',
-        price: 1.29,
-        amount: 4
-    }
-];
-
 const testProduct: IProduct = {
     id: 1,
     name: 'Test item',
@@ -45,11 +30,21 @@ const testProduct: IProduct = {
     amount: Math.floor((Math.random() * 10) + 1)
 }
 
+let defaultCartContent: IProduct[] = [];
+
 export const CartProvider = ({children}: any) => {
-    const [cartContent, setCartContent] = useState<IProduct[]>(defaultCartContent);
+    const [cartContent, setCartContent] = useState<IProduct[]>([]);
     const [productContent, setProductContent] = useState([]);
     const [totalAmount, setTotalAmount] = useState(defaultState.totalAmount);
     const [totalPrice, setTotalPrice] = useState(defaultState.totalPrice);
+
+    useEffect(() => {
+        getDefaultCartContent().then((res: any) => {
+            defaultCartContent = res.data;
+
+            setCartContent(defaultCartContent);
+        });
+    }, []);
 
     useEffect(() => {
         updateTotalPriceAndAmount();
@@ -73,9 +68,6 @@ export const CartProvider = ({children}: any) => {
     }
 
     const setDefaultCartContent = () => {
-        defaultCartContent[0].amount = 2;
-        defaultCartContent[1].amount = 4;
-        
         setCartContent(defaultCartContent);
     }
 
