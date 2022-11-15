@@ -17,8 +17,8 @@ function Cart() {
   const cartItems = cartContent.map((product: IProduct) => {
     //TODO: Could be a separate component
     return (
-      <div className="cart-item" key={product.id + 2}  data-testid={product.id}>
-        <div className="remove" onClick={() => removeItem({...product, amount: 0})}>x </div>
+      <div className="cart-item" key={product.id + 2} data-testid="cart-item">
+        <div className="remove" role="removeButton" onClick={() => removeItem({...product, amount: 0})}>x </div>
         <div className="amount">{product.amount}</div>
         <div className="name">{product.name}</div>
         <div className="total-price">{(product.price * product.amount).toFixed(2)}</div>
