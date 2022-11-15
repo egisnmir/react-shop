@@ -6,8 +6,8 @@
 
 
 #### Testing:
-yarn test
-yarn test:coverage
+* yarn test
+* yarn test:coverage
 
 
 #### Bugs:
