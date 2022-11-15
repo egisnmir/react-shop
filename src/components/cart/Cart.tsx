@@ -18,7 +18,7 @@ function Cart() {
     //TODO: Could be a separate component
     return (
       <div className="cart-item" key={product.id + 2} data-testid="cart-item">
-        <div className="remove" role="removeButton" onClick={() => removeItem({...product, amount: 0})}>x </div>
+        <div className="remove" role="removeBtn" onClick={() => removeItem({...product, amount: 0})}>x </div>
         <div className="amount">{product.amount}</div>
         <div className="name">{product.name}</div>
         <div className="total-price">{(product.price * product.amount).toFixed(2)}</div>
@@ -37,11 +37,11 @@ function Cart() {
         <div className="total-price" data-test="cart-total-price">{totalPrice}</div>
       </div>
 
-      <button className='test-button' onClick={setDefaultCartContent}>setDefaultCartContent()</button>
+      <button className="test-button" onClick={setDefaultCartContent}>setDefaultCartContent()</button>
       <br />
-      <button className='test-button' onClick={addTestItemToCart}>addTestItemToCart()</button>
+      <button className="test-button" onClick={addTestItemToCart}>addTestItemToCart()</button>
       <br />
-      <button className='test-button' onClick={clearCart}>clearCart()</button>
+      <button className="test-button" role="clearCartBtn" onClick={clearCart}>clearCart()</button>
     </div>
   );
 };

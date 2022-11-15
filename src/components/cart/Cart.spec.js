@@ -81,12 +81,13 @@ describe('<Cart> component', () => {
             await waitFor(() => {
                 const cartItems = screen.getAllByTestId('cart-item');
                 const previousLength = cartItems.length;
-                const removeButton = within(cartItems[0]).getByRole('removeButton');
+                const removeButton = within(cartItems[0]).getByRole('removeBtn');
                 
                 fireEvent.click(removeButton);
 
                 expect(screen.getAllByTestId('cart-item').length).toBe(previousLength - 1);
             });
         });
-    })
+    });
+
 });
