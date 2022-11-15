@@ -6,7 +6,8 @@
 
 
 #### Testing:
-npx cypress open
+yarn test
+yarn test:coverage
 
 
 #### Bugs:
