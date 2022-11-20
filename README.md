@@ -20,6 +20,7 @@
 #### Things to add:
 * Add product search input
 * Add product creation form. Add validation and use refs
+* Implement authentication with JWT? 
 
 * Unit & integration testing. React Testing Library
 * E2E testing. Cypress
