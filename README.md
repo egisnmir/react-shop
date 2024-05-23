@@ -1,3 +1,4 @@
+
 #### To run it locally simply do:
 1. yarn install
 2. yarn start
@@ -22,8 +23,8 @@
 * Add product creation form. Add validation and use refs
 * Implement authentication with JWT? 
 
-* Unit & integration testing. React Testing Library
-* E2E testing. Cypress
+* **React Testing Library** for unit & integration testing. 
+* **Cypress** for E2E testing. 
 
 * Add themes using context
 * Add data randomizer to backend with a 30-50% chance of changing data

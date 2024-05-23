@@ -27,22 +27,25 @@ function Cart() {
   });
 
   return (
-    <div className="cart">
-      <h4>Shopping Cart</h4>
-      {cartItems.length ? cartItems : ''}
+    <>
+      <div className="cart">
+        <h4>Shopping Cart</h4>
+        {cartItems.length ? cartItems : ''}
 
-      <div className="cart-item cart-total">
-        <div className="amount" data-test="cart-amount">{totalAmount}</div>
-        <div className="name">Total</div>
-        <div className="total-price" data-test="cart-total-price">{totalPrice}</div>
+        <div className="cart-item cart-total">
+          <div className="amount" data-test="cart-amount">{totalAmount}</div>
+          <div className="name">Total</div>
+          <div className="total-price" data-test="cart-total-price">{totalPrice}</div>
+        </div>
       </div>
-
-      <button className="test-button" onClick={setDefaultCartContent}>setDefaultCartContent()</button>
-      <br />
-      <button className="test-button" onClick={addTestItemToCart}>addTestItemToCart()</button>
-      <br />
-      <button className="test-button" role="clearCartBtn" onClick={clearCart}>clearCart()</button>
-    </div>
+      <div className='cart-buttons'>
+        <button className="test-button" onClick={setDefaultCartContent}>setDefaultCartContent()</button>
+        <br />
+        <button className="test-button" onClick={addTestItemToCart}>addTestItemToCart()</button>
+        <br />
+        <button className="test-button" role="clearCartBtn" onClick={clearCart}>clearCart()</button>
+      </div>
+    </>
   );
 };
 
