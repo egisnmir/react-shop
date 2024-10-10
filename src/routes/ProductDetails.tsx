@@ -40,15 +40,15 @@ export default function ProductDetailsPage() {
 
             {loaded &&
                 <>
-                <ProductItem
-                    id={params.id}
-                    name={productDetails?.name}
-                    price={productDetails?.price}
-                    noNav={true}>
-                </ProductItem>
+                    <ProductItem
+                        id={params.id}
+                        name={productDetails?.name}
+                        price={productDetails?.price}
+                        noNav={true}>
+                    </ProductItem>
 
-                <br />
-                <button onClick={() => navigate(-1)}>Return back</button>
+                    <br />
+                    <button onClick={() => navigate(-1)}>Return back</button>
                 </>
             }
         </main>
