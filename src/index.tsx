@@ -21,6 +21,13 @@ import reportWebVitals from './reportWebVitals';
 import { CartProvider } from './core/contexts/CartContext';
 import toastr from 'toastr';
 
+if (process.env.NODE_ENV === 'development') {
+    const whyDidYouRender = require('@welldone-software/why-did-you-render');
+    whyDidYouRender(React, {
+        trackAllPureComponents: true,
+    });
+}
+
 toastr.options = {
   "positionClass": "toast-top-center",
   "timeOut": 1500

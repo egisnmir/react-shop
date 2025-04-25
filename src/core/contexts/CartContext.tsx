@@ -1,4 +1,4 @@
-import { useState, createContext, useEffect } from 'react';
+import { useState, createContext, useEffect, useMemo } from 'react';
 import toastr from 'toastr';
 import IProduct from '../interfaces/Product';
 import { getDefaultCartContent } from '../../services/apiService';
@@ -121,19 +121,21 @@ export const CartProvider = ({children}: any) => {
         updateCart(data);
     }
 
+    const value = useMemo(() => ({
+        setProductList,
+        cartContent,
+        productContent,
+        totalAmount,
+        totalPrice,
+        setDefaultCartContent,
+        updateCart,
+        addTestItemToCart,
+        clearCart,
+        removeItem
+    }), [totalAmount, totalPrice])
+
     return (
-        <CartContext.Provider value={{
-            setProductList,
-            cartContent,
-            productContent,
-            totalAmount,
-            totalPrice,
-            setDefaultCartContent,
-            updateCart,
-            addTestItemToCart,
-            clearCart,
-            removeItem
-        }}>
+        <CartContext.Provider value={value}>
             {children}
         </CartContext.Provider>
     )
