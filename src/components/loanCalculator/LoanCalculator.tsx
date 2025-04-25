@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useCurrencyFormatter } from 'src/hooks/useCurrencyFormatter';
 import './LoanCalculator.scss';
 
 const LoanCalculator: React.FC = () => {
@@ -7,18 +8,15 @@ const LoanCalculator: React.FC = () => {
     const [loanTerm, setLoanTerm] = useState<number>(20);
     const [monthlyPayment, setMonthlyPayment] = useState<string>('0.00');
 
-    // Formatter to add spaces for thousands (e.g., 50 000)
-    const formatNumber = (number: number): string => {
-        return new Intl.NumberFormat('en-GB', {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2,
-        }).format(number);
-    };
+    const locale = 'de-DE';
+    const currency = 'EUR';
 
     // Calculate loan whenever inputs change
     useEffect(() => {
         calculateLoan();
     }, [loanAmount, interestRate, loanTerm]);
+
+    const format = useCurrencyFormatter(locale, currency);
 
     const calculateLoan = () => {
         const principal = parseFloat(loanAmount.toString());
@@ -27,7 +25,7 @@ const LoanCalculator: React.FC = () => {
 
         if (principal && interest && numberOfPayments) {
             const payment = (principal * interest) / (1 - Math.pow((1 + interest), -numberOfPayments));
-            setMonthlyPayment(formatNumber(payment));
+            setMonthlyPayment(format(payment));
         } else {
             setMonthlyPayment('0.00');
         }
@@ -38,7 +36,7 @@ const LoanCalculator: React.FC = () => {
             <h2 className="title">Loan Calculator</h2>
             <form className="calculator-form">
                 <div className="input-group">
-                    <label>Loan Amount (€):</label>
+                    <label>Loan Amount:</label>
                     <input
                         type="number"
                         value={loanAmount}
@@ -69,7 +67,7 @@ const LoanCalculator: React.FC = () => {
                 </div>
             </form>
             <h3 className="result">
-                Monthly Payment: <span className="payment">€{monthlyPayment}</span>
+                Monthly Payment: <span className="payment">{monthlyPayment}</span>
             </h3>
         </div>
     );

@@ -39,11 +39,11 @@ function Cart() {
         </div>
       </div>
       <div className='cart-buttons'>
-        <button className="test-button" data-cy="set-default-button" onClick={setDefaultCartContent}>setDefaultCartContent()</button>
+        <button className="test-button" data-cy="set-default-button" onClick={setDefaultCartContent}>Set default content</button>
         <br />
-        <button className="test-button" data-cy="add-test-item-button" onClick={addTestItemToCart}>addTestItemToCart()</button>
+        <button className="test-button" data-cy="add-test-item-button" onClick={addTestItemToCart}>Add test item</button>
         <br />
-        <button className="test-button" data-cy="clear-cart-button" role="clearCartBtn" onClick={clearCart}>clearCart()</button>
+        <button className="test-button" data-cy="clear-cart-button" role="clearCartBtn" onClick={clearCart}>Clear cart</button>
       </div>
     </>
   );
