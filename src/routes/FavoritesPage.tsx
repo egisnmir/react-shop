@@ -11,7 +11,7 @@ export default function FavoritesPage() {
     const nameRef = useRef<any>();
 
     const changeRefStyle = () => {
-        nameRef.current.style.color = 'red';
+        nameRef.current.style.color = '#'+(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
         nameRef.current.style.fontWeight = 'bold';
     }
 
@@ -19,7 +19,7 @@ export default function FavoritesPage() {
         <main>
             <h4 ref={nameRef}>Favorites page</h4>
 
-            <button onClick={() => changeRefStyle()}>Change title style</button>
+            <button onClick={() => changeRefStyle()}>Set random title color</button>
             <br />
             <br />
 

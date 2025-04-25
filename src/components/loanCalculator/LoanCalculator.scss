@@ -1,0 +1,86 @@
+$primary-color: #4a90e2;
+$secondary-color: #f9f9f9;
+$text-color: #333;
+$label-color: #666;
+$box-shadow-color: rgba(0, 0, 0, 0.1);
+$input-border-color: #ccc;
+$button-hover-color: darken($primary-color, 10%);
+
+.calculator-container {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: $secondary-color;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px $box-shadow-color;
+    font-family: 'Arial', sans-serif;
+    color: $text-color;
+}
+
+.title {
+    text-align: center;
+    color: $primary-color;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+.calculator-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: $label-color;
+}
+
+.input-field {
+    padding: 10px;
+    border: 1px solid $input-border-color;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fff;
+    transition: border-color 0.3s ease-in-out;
+
+    &:focus {
+        outline: none;
+        border-color: $primary-color;
+    }
+}
+
+.calculate-button {
+    padding: 12px;
+    background-color: $primary-color;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+        background-color: $button-hover-color;
+    }
+}
+
+.result {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: $text-color;
+}
+
+.payment {
+    color: $primary-color;
+    font-size: 1.4rem;
+}

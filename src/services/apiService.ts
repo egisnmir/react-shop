@@ -6,9 +6,17 @@ const port = 3001;
 const server = `${localhost}:${port}`;
 
 export const getProducts = () => {
-    return axios.get<Product[]>(`${server}/products`);
+    return axios.get<Product[]>(`${server}/products`)
+        .catch(error => {
+            console.error('Failed to get products:', error);
+            throw error;
+        });
 }
 
 export const getDefaultCartContent = () => {
     return axios.get<Product[]>(`${server}/default-cart-content`)
+        .catch(error => {
+            console.error('Failed to get default cart content:', error);
+            throw error;
+        });
 }

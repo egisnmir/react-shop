@@ -14,7 +14,8 @@ import {
     CartPage,
     HomePage,
     FavoritesPage,
-    ProductDetailsPage
+    ProductDetailsPage,
+    LoanPage
 } from './routes';
 import reportWebVitals from './reportWebVitals';
 import { CartProvider } from './core/contexts/CartContext';
@@ -39,6 +40,7 @@ root.render(
                         <Route path="/cart" element={<CartPage />} />
                         <Route path="/favorites" element={<FavoritesPage />} />
                         <Route path="/product-details/:id" element={<ProductDetailsPage />} />
+                        <Route path="/loan-page" element={<LoanPage />} />
                     </Route>
                 </Routes>
             </BrowserRouter>

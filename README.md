@@ -20,12 +20,14 @@
 
 #### Things to add:
 * Add product search input
-* Add product creation form. Add validation and use refs
-* Implement authentication with JWT? 
+* Add product creation form. It could be a controlled component
 
-* **React Testing Library** for unit & integration testing. 
-* **Cypress** for E2E testing. 
+* **React Testing Library** for unit & integration testing.
 
 * Add themes using context
 * Add data randomizer to backend with a 30-50% chance of changing data
   to use memoization
+* Add more TypeScript ?
+* Async operations lack comprehensive error handling. Implement try-catch
+  blocks and user-friendly error messages to handle failures gracefully.
+  
