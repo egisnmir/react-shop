@@ -12,7 +12,7 @@ function App() {
   const favoritesFromStore = useSelector((state: any) => state.favorites);
   const favoritesCount = favoritesFromStore.length;
 
-  // TODO: Can write a custom hook here. For cleaner code
+  // TODO: Could write a custom hook here
   useEffect(() => {
       if(productContent.length === 0) {
           getProducts().then((res) => {

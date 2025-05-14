@@ -15,7 +15,6 @@ function Cart() {
   } = useContext<any>(CartContext);
 
   const cartItems = cartContent.map((product: IProduct) => {
-    //TODO: Could be a separate component
     return (
       <div className="cart-item" key={product.id + 2} data-testid="cart-item">
         <div className="remove" role="removeBtn" onClick={() => removeItem({...product, amount: 0})}>x </div>
