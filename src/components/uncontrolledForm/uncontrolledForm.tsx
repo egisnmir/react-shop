@@ -1,12 +1,6 @@
-import './uncontrolledForm.scss';
 import React, { useRef } from 'react';
 
 const UncontrolledForm = () => {
-    // const [loan, setLoan] = useState(2000);
-    // const [loanTerm, setLoanTerm] = useState(3);
-    // const [interest, setInterest] = useState(4);
-    // const [monthlyPayment, setMonthlyPayment] = useState(0);
-
     const loanRef = useRef<HTMLInputElement>(null);
     const loanTermRef = useRef<HTMLInputElement>(null);
     const interestRef = useRef<HTMLInputElement>(null);
@@ -70,19 +64,14 @@ const UncontrolledForm = () => {
       const monthlyPayment = Number(loanRef.current?.value) *
           (monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments)) /
           (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
-  
-      // alert(
-      //   'Monthly payment: ' + parseFloat(monthlyPayment.toFixed(2)) + '$'
-      // );
-
-      
+        
       monthlyPaymentRef.current!.textContent = String(parseFloat(monthlyPayment.toFixed(2))) + '$';
     }
 
     return (
-        <div className='uncontrolled-component-wrapper'>
+        <div>
             <h4>Uncontrolled component</h4>
-            <form className="uncontrolled-form" onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <label>Loan amount (max 5000):</label>
                 <br />
                 <input

@@ -6,8 +6,10 @@ export default function FormsPage() {
         <main>
             <h4>Forms page</h4>
 
-            <ControlledForm></ControlledForm>
-            <UncontrolledForm></UncontrolledForm>
+            <div style={{display: 'flex'}}>
+                <ControlledForm></ControlledForm>
+                <UncontrolledForm></UncontrolledForm>
+            </div>
         </main>
     )
 }

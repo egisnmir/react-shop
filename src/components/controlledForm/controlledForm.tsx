@@ -1,4 +1,3 @@
-import './ControlledForm.scss';
 import { useEffect, useState } from 'react';
 
 const ControlledForm = () => {
@@ -56,9 +55,9 @@ const ControlledForm = () => {
     }, [loan, loanTerm, interest]);
 
     return (
-        <div className='controlled-component-wrapper'>
+        <div style={{marginRight: '150px'}}>
             <h4>Controlled component</h4>
-            <form className="controlled-form">
+            <form>
                 <label>Loan amount (max 5000):</label>
                 <br />
                 <input
