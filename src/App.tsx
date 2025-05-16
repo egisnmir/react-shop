@@ -36,6 +36,7 @@ function App() {
             Favorites{favoritesCount > 0 ? ` [${favoritesCount}]` : ''}
           </Link>
           <Link to='/loan-page'>Loan calculator</Link>
+          <Link to='/forms'>Forms</Link>
         </nav>
         
         <Outlet />
