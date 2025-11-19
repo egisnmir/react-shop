@@ -25,8 +25,6 @@
 * **React Testing Library** higher test coverage.
 
 * Add themes using context
-* Add data randomizer to backend with a 30-50% chance of changing data
-  to use memoization
 * Advanced TypeScript ?
 * Async operations lack comprehensive error handling. Implement try-catch
   blocks and user-friendly error messages to handle failures gracefully.
