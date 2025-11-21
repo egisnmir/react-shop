@@ -1,7 +1,7 @@
 import './Cart.scss';
 import { useContext } from 'react';
 import CartContext from '../../core/contexts/CartContext';
-import IProduct from '../../core/interfaces/Product';
+import { IProduct } from '../../core/interfaces/Product';
 
 function Cart() {
   const {

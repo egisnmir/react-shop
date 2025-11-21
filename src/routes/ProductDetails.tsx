@@ -2,12 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import ProductItem from "../components/products/ProductItem";
 import { getProducts } from "../services/apiService";
-
-interface IProductDetails {
-    id: number,
-    name: string,
-    price: number
-}
+import { IProductDetails } from "../core/interfaces/Product";
 
 export default function ProductDetailsPage() {
     const params = useParams();

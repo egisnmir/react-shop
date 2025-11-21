@@ -2,11 +2,7 @@ import { useContext, FC } from 'react';
 import './ProductsList.scss';
 import ProductItem from './ProductItem';
 import CartContext from '../../core/contexts/CartContext';
-import IProduct from '../../core/interfaces/Product';
-
-interface IProductsList {
-    products: IProduct[]
-}
+import { IProduct, IProductsList } from '../../core/interfaces/Product';
 
 const ProductsList: FC<any> = (props: IProductsList) => {
     const { cartContent } = useContext<any>(CartContext);

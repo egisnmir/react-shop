@@ -1,6 +1,6 @@
 import { useState, createContext, useEffect, useMemo } from 'react';
 import toastr from 'toastr';
-import IProduct from '../interfaces/Product';
+import { IProduct } from '../interfaces/Product';
 import { getDefaultCartContent } from '../../services/apiService';
 
 interface ICartContext {

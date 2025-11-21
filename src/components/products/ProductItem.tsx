@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import CartContext from '../../core/contexts/CartContext';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleFavorite } from '../../core/slices/favoritesSlice';
-import IProduct from '../../core/interfaces/Product';
+import { IProduct } from '../../core/interfaces/Product';
 
 const ProductItem: FC<any> = (props: IProduct) => {
   const dispatch = useDispatch();
